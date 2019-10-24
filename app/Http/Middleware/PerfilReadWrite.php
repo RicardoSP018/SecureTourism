@@ -1,0 +1,24 @@
+<?php
+namespace App\Http\Middleware;  
+use closure;
+use Illuminate\Support\Facades\Auth;
+
+class PerfilReadWrite{
+
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @param  string|null  $guard
+     * @return mixed
+     */
+    public function handle($request, closure $next, $guard = null)
+    {
+    		$user=Auth::user();
+    		if($user->perfil>2){
+    			abort(403, 'Acceso no autorizado');
+    		}
+        return $next($request);
+    		}
+    }

@@ -1,0 +1,41 @@
+{
+    "model_name":"Promocion",
+    "pagination":20,
+    "soft_deletes":"yes",
+    "pk":"id",
+    "localize":"yes",
+    "table":"promociones",
+    "fields": [
+        {
+            "name": "nombre",
+            "type": "string"
+        },
+        {
+            "name": "requsitos",
+            "type": "string"
+        },
+        {
+            "name": "precio",
+            "type": "number"
+        },
+        {
+            "name": "fechaExpiracion",
+            "type": "date"
+        }
+        ],
+    "relationships": [
+        {
+            "name": "paquete",
+            "type": "belongsTo",
+            "class": "App\\Paquete"
+        }
+    ],
+    "validations": [
+        {
+            "field": "nombre",
+            "rules": "required|min:3|max:20"
+        }
+
+    ]
+	
+}

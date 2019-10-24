@@ -1,0 +1,30 @@
+{
+    "model_name":"Categoria",
+    "pagination":20,
+    "soft_deletes":"yes",
+    "pk":"id",
+    "localize":"yes",
+    "table":"categorias",
+    "fields": [
+        {
+            "name": "nombre",
+            "type": "string"
+        },
+        {
+            "name": "descripcion",
+            "type": "string"
+        },
+        {
+            "name": "imagen",
+            "type": "file"
+        }
+    ],
+    "validations": [
+        {
+            "field": "descripcion",
+            "rules": "required|min:5"
+        }
+
+    ]
+	
+}

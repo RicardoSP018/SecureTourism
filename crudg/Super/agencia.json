@@ -1,0 +1,86 @@
+{
+	"model_name":"Agencia",	
+	"pagination":50,
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"agencias",
+    "fields": [		
+        {
+            "name": "NombreAgencia",
+            "type": "string"
+ 
+        }
+        ,
+        {
+            "name": "NombreDueno",
+            "type": "string"
+        }
+        ,
+        {
+            "name": "Telefono",
+            "type": "string"
+        }
+       ,
+        {
+            "name": "Descripcion",
+            "type": "string"
+        }
+        ,
+        {
+            "name": "Direccion",
+            "type": "string"
+        },
+        {
+            "name": "usuario_id",
+            "type": "integer#unsigned"
+        },
+         {
+            "name": "suscripcion_id",
+            "type": "integer#unsigned"
+        }
+        ],
+    "foreign_keys": [ {
+            
+            "column": "usuario_id",
+            "references": "id",
+            "on": "usuarios",
+            "onDelete": "cascade"
+        },
+        {
+
+            "column": "suscripcion_id",
+            "references": "id",
+            "on": "suscripciones",
+            "onDelete": "cascade"
+        }
+    ],
+        "relationships": [
+        {
+            "name": "usuarios",
+            "type": "belongsTo",
+            "class": "App\\Usuario"
+        },
+        {
+            "name": "suscripciones",
+            "type": "hasOne",
+            "class": "App\\Suscripcion"
+        }
+    ],
+
+    "validations": [
+        {
+            "field": "Telefono",
+            "rules": "required|max:10"
+        },
+		{
+            "field": "Descripcion",
+            "rules": "required|min:10|max:50"
+        },
+        {
+            "field": "Direccion",
+            "rules": "required|min:8"
+        }
+    ]
+	
+}

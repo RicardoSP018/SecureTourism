@@ -1,0 +1,45 @@
+{
+	"model_name":"Proveedor",	
+	"pagination":50,
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"proveedores",
+    "fields": [		
+        {
+            "name": "Nombre",
+            "type": "string"
+ 
+        }
+        ,
+        {
+            "name": "Correo",
+            "type": "email"
+        }
+        ,
+        {
+            "name": "Direccion",
+            "type": "string"
+        },
+        {
+            "name": "Telefono",
+            "type": "string"
+        }
+
+        ],
+     "relationships": [
+        {
+            "name": "productos",
+            "type": "hasMany",
+            "class": "App\\Producto"
+        }
+    ],
+
+    "validations": [
+		{
+            "field": "Correo",
+            "rules": "required|min:5"
+        }
+    ]
+	
+}

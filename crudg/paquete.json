@@ -1,0 +1,92 @@
+{
+    "model_name":"Paquete",
+    "pagination":20,
+    "soft_deletes":"yes",
+    "pk":"id",
+    "localize":"yes",
+    "table":"paquetes",
+    "fields": [
+        {
+            "name": "Nombre",
+            "type": "string"
+        },
+        {
+            "name": "descripcion",
+            "type": "string"
+        },
+        {
+            "name": "contenido",
+            "type": "string"
+        },
+        {
+            "name": "destino",
+            "type": "string"
+        },
+        {
+            "name": "precio",
+            "type": "string"
+        },
+        {
+            "name": "imagen",
+            "type": "file"
+        },
+        {
+            "name": "categoria_id",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "promocion_id",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "guia_id",
+            "type": "integer#unsigned"
+        }
+    ],
+
+    "foreign_keys": [
+        {
+            "column": "categoria_id",
+            "references": "id",
+            "on": "categorias",
+            "onDelete": "cascade"
+        },
+        {
+            "column": "promocion_id",
+            "references": "id",
+            "on": "promociones",
+            "onDelete": "cascade"
+        },
+        {
+            "column": "guia_id",
+            "references": "id",
+            "on": "guias",
+            "onDelete": "cascade"
+        }
+        ],
+    "relationships": [
+        {
+            "name": "categorias",
+            "type": "belongsTo",
+            "class": "App\\Categoria"
+        },
+        {
+            "name": "guias",
+            "type": "hasMany",
+            "class": "App\\Guia"
+        },        
+        {
+            "name": "promociones",
+            "type": "hasOne",
+            "class": "App\\Promocion"
+        }
+    ],
+    "validations": [
+        {
+            "field": "Nombre",
+            "rules": "required|min:3|max:20"
+        }
+
+    ]
+	
+}
