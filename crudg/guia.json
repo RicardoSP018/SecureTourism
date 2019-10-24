@@ -1,0 +1,49 @@
+{
+    "model_name":"Guia",
+    "pagination":20,
+    "soft_deletes":"yes",
+    "pk":"id",
+    "localize":"yes",
+    "table":"guias",
+    "fields": [
+        {
+            "name": "Nombre",
+            "type": "string"
+        },
+        {
+            "name": "apellido",
+            "type": "string"
+        },
+        {
+            "name": "edad",
+            "type": "number"
+        },
+        {
+            "name": "genero",
+            "type": "select",
+            "options": {
+                "opcion1": "Hombre",
+                "opcion2": "Mujer",
+                "opcion3": "Sin especificar"
+        }},
+        {
+            "name": "precio",
+            "type": "string"
+        }
+        ],
+    "relationships": [
+        {
+            "name": "paquetes",
+            "type": "belongsTo",
+            "class": "App\\Paquete"
+        }
+    ],
+    "validations": [
+        {
+            "field": "Nombre",
+            "rules": "required|min:3|max:20"
+        }
+
+    ]
+	
+}

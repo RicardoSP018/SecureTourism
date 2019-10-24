@@ -1,0 +1,34 @@
+{
+	"model_name":"Suscripcion",
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"suscripciones",
+    "fields": [		
+        {
+            "name": "nombre",
+            "type": "string"
+        },
+        {
+            "name": "descripcion",
+            "type": "text"
+        },
+        {
+            "name": "precio",
+            "type": "text"
+        }         
+    ],
+     "relationships": [
+        {
+            "name": "agencias",
+            "type": "belongsTo",
+            "class": "App\\Agencia"
+        }
+    ],
+    "validations": [
+        {
+            "field": "nombre",
+            "rules": "required|min:5|max:20"
+        }
+    ]
+}
