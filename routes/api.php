@@ -23,8 +23,6 @@ Route::group(['prefix' => 'v1','middleware' => 'auth:api'], function () {
     //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
     #adminlte_api_routes
 });
-<<<<<<< HEAD
-=======
 
 Route::group(['middleware'=>'auth:api'],function() {
 Route::post('/todos','UsuarioController@todos');
@@ -40,4 +38,3 @@ Route::post('/V1/IAddAgency', 'App\Http\Services\AddAgencyService@Add');
 Route::get('/V1/IVerUbicacion/{$id}', 'App\Http\Services\VerUbicacionService@Show');
 
 });
->>>>>>> 1735670f8ab0e2b144224ec6b8e3d4bf95dbde89
