@@ -1,0 +1,26 @@
+{
+    "model_name":"Waypoint",
+    "pagination":20,
+    "soft_deletes":"yes",
+    "pk":"id",
+    "localize":"yes",
+    "table":"Waypoints",
+    "fields": [
+        {
+            "name": "fecha",
+            "type": "date"
+        },
+        {
+            "name": "hora",
+            "type": "number"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "Dispositivo_id",
+            "references": "id",
+            "on": "Dispositivos",
+            "onDelete": "cascade"
+        }
+        ]
+}

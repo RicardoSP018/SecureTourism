@@ -1,0 +1,77 @@
+{
+	"model_name":"Agencias",	
+	"pagination":50,
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"Agencias",
+    "fields": [		
+        {
+            "name": "nombreAgencia",
+            "type": "string"
+ 
+        }
+        ,
+        {
+            "name": "nombreDueno",
+            "type": "string"
+        }
+        ,
+        {
+            "name": "telefono",
+            "type": "string"
+        }
+       ,
+        {
+            "name": "descripcion",
+            "type": "string"
+        }
+        ,
+        {
+            "name": "direccion",
+            "type": "string"
+        },
+        {
+            "name": "correo",
+            "type": "string"
+        },
+        {
+            "name": "redesSociales",
+            "type": "string"
+        },
+        {
+            "name": "usuario_id",
+            "type": "integer#unsigned"
+        },
+         {
+            "name": "suscripcion_id",
+            "type": "integer#unsigned"
+        }
+        ],
+    "foreign_keys": [
+    ],
+     
+     "relationships": [
+
+    ],
+
+    "validations": [
+        {
+            "field": "telefono",
+            "rules": "required|max:10"
+        },
+		{
+            "field": "descripcion",
+            "rules": "required|min:10|max:50"
+        },
+		{
+            "field": "nombreDueno",
+            "rules": "required|min:10|max:50"
+        },
+        {
+            "field": "direccion",
+            "rules": "required|min:8"
+        }
+    ]
+	
+}

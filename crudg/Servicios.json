@@ -1,0 +1,42 @@
+{
+	"model_name":"Servicio",
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"Servicios",
+    "fields": [		
+        {
+            "name": "estado",
+            "type": "string"
+        },
+        {
+            "name": "inicio",
+            "type": "string"
+        },
+        {
+            "name": "vencimiento",
+            "type": "string"
+        }         
+    ],
+     "relationships": [
+        {
+            "name": "agencias",
+            "type": "belongsTo",
+            "class": "App\\Agencia"
+        }
+    ],
+     "foreign_keys": [
+        {
+            "column": "Agencias_id",
+            "references": "id",
+            "on": "Agencias",
+            "onDelete": "cascade"
+        }
+        ],
+    "validations": [
+        {
+            "field": "estado",
+            "rules": "required|min:5|max:20"
+        }
+    ]
+}
