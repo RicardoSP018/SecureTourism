@@ -1,0 +1,63 @@
+{
+	"model_name":"Turista",	
+	"pagination":50,
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"Turistas",
+    "fields": [		
+        {
+            "name": "nombre",
+            "type": "string"
+ 
+        }
+        ,
+        {
+            "name": "apellido",
+            "type": "string"
+        }
+        ,
+        {
+            "name": "telefono",
+            "type": "string"
+        }
+        ,
+        {
+            "name": "email",
+            "type": "string"
+        },
+        {
+            "name": "usuario_id",
+            "type": "integer#unsigned"
+        },
+         {
+            "name": "suscripcion_id",
+            "type": "integer#unsigned"
+        }
+        ],
+    "foreign_keys": [ 
+    ],
+        "relationships": [
+        {
+            "name": "PaqueteAdquirido",
+            "type": "hasMany",
+            "class": "App\\PaqueteAdquirido"
+        }
+    ],
+
+    "validations": [
+        {
+            "field": "nombre",
+            "rules": "required|min:3"
+        },
+        {
+            "field": "apellido",
+            "rules": "required|min:10"
+        },
+		{
+            "field": "email",
+            "rules": "required|min:10|max:50"
+        }
+    ]
+	
+}

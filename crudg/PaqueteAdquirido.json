@@ -1,0 +1,50 @@
+{
+    "model_name":"PaqueteAdquirido",
+    "pagination":20,
+    "soft_deletes":"yes",
+    "pk":"id",
+    "localize":"yes",
+    "table":"PaquetesAdquiridos",
+    "fields": [
+        {
+            "name": "fechaInicio",
+            "type": "Date"
+        },
+        {
+            "name": "fechaFin",
+            "type": "Date"
+        },
+        {
+            "name": "precio",
+            "type": "string"
+        },
+        {
+            "name": "turista_id",
+            "type": "integer#unsigned"
+        }
+    ],
+
+    "foreign_keys": [
+        {
+            "column": "turista_id",
+            "references": "id",
+            "on": "Turistas",
+            "onDelete": "cascade"
+        }
+        ],
+    "relationships": [
+        {
+            "name": "paquete",
+            "type": "hasOne",
+            "class": "App\\Paquete"
+        }
+    ],
+    "validations": [
+        {
+            "field": "Nombre",
+            "rules": "required|min:3|max:20"
+        }
+
+    ]
+	
+}

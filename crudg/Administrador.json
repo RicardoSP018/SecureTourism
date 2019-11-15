@@ -1,0 +1,61 @@
+{
+	"model_name":"Administrador",	
+	"pagination":50,
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"Administradores",
+    "fields": [		
+        {
+            "name": "nombre",
+            "type": "string"
+ 
+        }
+        ,
+        {
+            "name": "correo",
+            "type": "email"
+        }
+        ,
+        {
+            "name": "contrasena",
+            "type": "password"
+        },
+        {
+            "name": "telefono",
+            "type": "password"
+        }
+
+        ],
+    "relationships": [
+        {
+            "name": "agencias",
+            "type": "hasOne",
+            "class": "App\\Agencia"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "Agencias_id",
+            "references": "id",
+            "on": "Agencias",
+            "onDelete": "cascade"
+        }
+        ],
+
+    "validations": [
+        {
+            "field": "nombre",
+            "rules": "required|min:3|max:50"
+        },
+		{
+            "field": "correo",
+            "rules": "required|min:5"
+        },
+        {
+            "field": "contrasena",
+            "rules": "required|min:8"
+        }
+    ]
+	
+}

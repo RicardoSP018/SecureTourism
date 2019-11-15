@@ -1,0 +1,63 @@
+{
+	"model_name":"Usuario",	
+	"pagination":50,
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"Usuarios",
+    "fields": [		
+        {
+            "name": "username",
+            "type": "string"
+ 
+        }
+        ,
+        {
+            "name": "correo",
+            "type": "email"
+        }
+        ,
+        {
+            "name": "contrasena",
+            "type": "password"
+        }
+
+        ],
+    "relationships": [
+        {
+            "name": "agencias",
+            "type": "hasOne",
+            "class": "App\\Agencia"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "Turista_id",
+            "references": "id",
+            "on": "Turistas",
+            "onDelete": "cascade"
+        },
+        {
+            "column": "Administrador_id",
+            "references": "id",
+            "on": "Administradores",
+            "onDelete": "cascade"
+        }
+        ],
+
+    "validations": [
+        {
+            "field": "Username",
+            "rules": "required|min:3|max:50"
+        },
+		{
+            "field": "Correo",
+            "rules": "required|min:5"
+        },
+        {
+            "field": "Contrasena",
+            "rules": "required|min:8"
+        }
+    ]
+	
+}

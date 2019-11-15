@@ -1,0 +1,56 @@
+{
+    "model_name":"Destino",
+    "pagination":20,
+    "soft_deletes":"yes",
+    "pk":"id",
+    "localize":"yes",
+    "table":"Destinos",
+    "fields": [
+        {
+            "name": "nombre",
+            "type": "string"
+        },
+        {
+            "name": "cupoMax",
+            "type": "string"
+        }
+        ],
+    "relationships": [
+        {
+            "name": "Paquete",
+            "type": "belongsTo",
+            "class": "App\\Paquete"
+        },
+        {
+            "name": "PaqueteAdquirido",
+            "type": "belongsTo",
+            "class": "App\\PaqueteAdquirido"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "Paquete_id",
+            "references": "id",
+            "on": "Paquetes",
+            "onDelete": "cascade"
+        },
+        {
+            "column": "PaqueteAdquirido_id",
+            "references": "id",
+            "on": "PaquetesAdquiridos",
+            "onDelete": "cascade"
+        }
+        ],
+    "validations": [
+        {
+            "field": "nombre",
+            "rules": "required|min:3|max:20"
+        },
+        {
+            "field": "cupoMax",
+            "rules": "required|max:2"
+        }
+
+    ]
+	
+}
