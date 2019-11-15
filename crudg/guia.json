@@ -4,10 +4,10 @@
     "soft_deletes":"yes",
     "pk":"id",
     "localize":"yes",
-    "table":"guias",
+    "table":"Guias",
     "fields": [
         {
-            "name": "Nombre",
+            "name": "nombre",
             "type": "string"
         },
         {
@@ -15,35 +15,37 @@
             "type": "string"
         },
         {
-            "name": "edad",
+            "name": "fechaNac",
             "type": "number"
         },
         {
-            "name": "genero",
-            "type": "select",
-            "options": {
-                "opcion1": "Hombre",
-                "opcion2": "Mujer",
-                "opcion3": "Sin especificar"
-        }},
-        {
-            "name": "precio",
+            "name": "redSocial",
             "type": "string"
         }
         ],
     "relationships": [
         {
-            "name": "paquetes",
+            "name": "PaquetesAdquiridos",
             "type": "belongsTo",
-            "class": "App\\Paquete"
+            "class": "App\\PaqueteAdquirido"
+        },
+        {
+            "name": "GuiasAsignados",
+            "type": "hasMany",
+            "class": "App\\GuiaAsignado"
         }
     ],
+    "foreign_keys": [
+        {
+            "column": "PaqueteAdquirido_id",
+            "references": "id",
+            "on": "paquetesAdquiridos",
+            "onDelete": "cascade"
+        }],
     "validations": [
         {
             "field": "Nombre",
             "rules": "required|min:3|max:20"
         }
-
-    ]
-	
+    ]	
 }

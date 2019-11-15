@@ -4,10 +4,10 @@
     "soft_deletes":"yes",
     "pk":"id",
     "localize":"yes",
-    "table":"paquetes",
+    "table":"Paquetes",
     "fields": [
         {
-            "name": "Nombre",
+            "name": "nombre",
             "type": "string"
         },
         {
@@ -19,11 +19,7 @@
             "type": "string"
         },
         {
-            "name": "destino",
-            "type": "string"
-        },
-        {
-            "name": "precio",
+            "name": "duracion",
             "type": "string"
         },
         {
@@ -31,59 +27,34 @@
             "type": "file"
         },
         {
-            "name": "categoria_id",
-            "type": "integer#unsigned"
-        },
-        {
-            "name": "promocion_id",
-            "type": "integer#unsigned"
-        },
-        {
-            "name": "guia_id",
+            "name": "PaqueteAdquirido_id",
             "type": "integer#unsigned"
         }
     ],
 
     "foreign_keys": [
         {
-            "column": "categoria_id",
+            "column": "PaqueteAdquirido_id",
             "references": "id",
-            "on": "categorias",
-            "onDelete": "cascade"
-        },
-        {
-            "column": "promocion_id",
-            "references": "id",
-            "on": "promociones",
-            "onDelete": "cascade"
-        },
-        {
-            "column": "guia_id",
-            "references": "id",
-            "on": "guias",
+            "on": "PaquetesAdquiridos",
             "onDelete": "cascade"
         }
         ],
     "relationships": [
         {
-            "name": "categorias",
+            "name": "Categorias",
             "type": "belongsTo",
             "class": "App\\Categoria"
-        },
-        {
-            "name": "guias",
-            "type": "hasMany",
-            "class": "App\\Guia"
         },        
         {
-            "name": "promociones",
-            "type": "hasOne",
+            "name": "PromocionesAsignadas",
+            "type": "belongsTo",
             "class": "App\\Promocion"
         }
     ],
     "validations": [
         {
-            "field": "Nombre",
+            "field": "nombre",
             "rules": "required|min:3|max:20"
         }
 

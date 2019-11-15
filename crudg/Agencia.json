@@ -4,31 +4,39 @@
 	"soft_deletes":"yes",
 	"pk":"id",
 	"localize":"yes",
-	"table":"agencias",
+	"table":"Agencias",
     "fields": [		
         {
-            "name": "NombreAgencia",
+            "name": "nombreAgencia",
             "type": "string"
  
         }
         ,
         {
-            "name": "NombreDueno",
+            "name": "nombreDueno",
             "type": "string"
         }
         ,
         {
-            "name": "Telefono",
+            "name": "telefono",
             "type": "string"
         }
        ,
         {
-            "name": "Descripcion",
+            "name": "descripcion",
             "type": "string"
         }
         ,
         {
-            "name": "Direccion",
+            "name": "direccion",
+            "type": "string"
+        },
+        {
+            "name": "correo",
+            "type": "string"
+        },
+        {
+            "name": "redesSociales",
             "type": "string"
         },
         {
@@ -40,45 +48,32 @@
             "type": "integer#unsigned"
         }
         ],
-    "foreign_keys": [ {
-            
-            "column": "usuario_id",
-            "references": "id",
-            "on": "usuarios",
-            "onDelete": "cascade"
-        },
-        {
-
-            "column": "suscripcion_id",
-            "references": "id",
-            "on": "suscripciones",
-            "onDelete": "cascade"
-        }
+    "foreign_keys": [
     ],
-        "relationships": [
+     
+     "relationships": [
         {
-            "name": "usuarios",
-            "type": "belongsTo",
-            "class": "App\\Usuario"
-        },
-        {
-            "name": "suscripciones",
+            "name": "Administradores",
             "type": "hasOne",
-            "class": "App\\Suscripcion"
+            "class": "App\\Administrador"
         }
     ],
 
     "validations": [
         {
-            "field": "Telefono",
+            "field": "telefono",
             "rules": "required|max:10"
         },
 		{
-            "field": "Descripcion",
+            "field": "descripcion",
+            "rules": "required|min:10|max:50"
+        },
+		{
+            "field": "nombreDueno",
             "rules": "required|min:10|max:50"
         },
         {
-            "field": "Direccion",
+            "field": "direccion",
             "rules": "required|min:8"
         }
     ]

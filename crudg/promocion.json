@@ -4,7 +4,7 @@
     "soft_deletes":"yes",
     "pk":"id",
     "localize":"yes",
-    "table":"promociones",
+    "table":"Promociones",
     "fields": [
         {
             "name": "nombre",
@@ -19,15 +19,15 @@
             "type": "number"
         },
         {
-            "name": "fechaExpiracion",
+            "name": "duracion",
             "type": "date"
         }
         ],
     "relationships": [
         {
-            "name": "paquete",
+            "name": "PromocionesAsignadas",
             "type": "belongsTo",
-            "class": "App\\Paquete"
+            "class": "App\\PromocionAsignada"
         }
     ],
     "validations": [

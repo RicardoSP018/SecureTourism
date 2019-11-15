@@ -1,0 +1,63 @@
+{
+	"model_name":"Dispositivo",	
+	"pagination":50,
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"dispositivos",
+    "fields": [		
+        {
+            "name": "nombre",
+            "type": "string"
+        }
+        ,
+        {
+            "name": "alcance",
+            "type": "string"
+        },
+        {
+            "name": "estado",
+            "type": "string"
+        }
+        
+        {
+            "name": "Imagen",
+            "type": "file"
+        },
+        {
+            "name": "DispositivoAsignado_id",
+             "type": "integer#unsigned"
+        }
+        ],
+     "foreign_keys": [
+        {
+            "column": "DispositivoAsignado_id",
+            "references": "id",
+            "on": "dispositivosAsignados",
+            "onDelete": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "Waypoints",
+            "type": "hasMany",
+            "class": "App\\Waypoint"
+        }
+    ],
+
+    "validations": [
+        {
+            "field": "nombre",
+            "rules": "required|max:10"
+        },
+        {
+            "field": "alcance",
+            "rules": "required|max:10"
+        },
+        {
+            "field": "estado",
+            "rules": "required|max:10"
+        }
+    ]
+	
+}
