@@ -1,0 +1,46 @@
+{
+    "model_name":"PromocionAsignada",
+    "pagination":20,
+    "soft_deletes":"yes",
+    "pk":"id",
+    "localize":"yes",
+    "table":"PromocionesAsignadas",
+    "fields": [
+       {
+            "name": "Paquete_id",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "Promocion_id",
+            "type": "integer#unsigned"
+        }
+        ],
+
+"foreign_keys": [
+        {
+            "column": "Paquete_id",
+            "references": "id",
+            "on": "Paquetes",
+            "onDelete": "cascade"
+        },
+        {
+            "column": "Promocion_id",
+            "references": "id",
+            "on": "Promociones",
+            "onDelete": "cascade"
+        }
+    ],
+
+    "relationships": [
+        {
+            "name": "Paquetes",
+            "type": "HasMany",
+            "class": "App\\Paquete"
+        },
+        {
+            "name": "Promociones",
+            "type": "HasMany",
+            "class": "App\\Promocione"
+        }
+    ]
+}

@@ -1,0 +1,47 @@
+{
+	"model_name":"DispositivoAsignado",	
+	"pagination":50,
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"DispositivosAsignados",
+    "fields": [		
+        {
+            "name": "Inicio",
+            "type": "date"
+ 
+        }
+        ,
+        {
+            "name": "Final",
+            "type": "date"
+        }
+        ,
+        {
+            "name": "Dispositivo_id",
+             "type": "integer#unsigned"
+        }
+        ],
+     "foreign_keys": [
+        {
+            "column": "Dispositivo_id",
+            "references": "id",
+            "on": "Dispositivos",
+            "onDelete": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "Dispositivos",
+            "type": "hasMany",
+            "class": "App\\Dispositivo"
+        },
+        {
+            "name": "PaquetesAdquiridos",
+            "type": "hasMany",
+            "class": "App\\PaquetesAdquirido"
+        },
+
+    ]
+    
+}

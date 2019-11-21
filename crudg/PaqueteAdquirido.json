@@ -21,6 +21,14 @@
         {
             "name": "turista_id",
             "type": "integer#unsigned"
+        },
+        {
+            "name": "paquete_id",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "dispositivoasignado_id",
+            "type": "integer#unsigned"
         }
     ],
 
@@ -30,23 +38,38 @@
             "references": "id",
             "on": "Turistas",
             "onDelete": "cascade"
+        },
+
+        {
+            "column": "paquete_id",
+            "references": "id",
+            "on": "Paquetes",
+            "onDelete": "cascade"
+        },
+
+        {
+            "column": "dispositivoasignado_id",
+            "references": "id",
+            "on": "DispositivosAsignados",
+            "onDelete": "cascade"
         }
+
         ],
     "relationships": [
-        {
-            "name": "Paquetes",
-            "type": "hasOne",
-            "class": "App\\Paquete"
-        },
         {
             "name": "Turistas",
             "type": "hasMany",
             "class": "App\\Turista"
         },
         {
+            "name": "Paquetes",
+            "type": "hasOne",
+            "class": "App\\Paquete"
+        },
+        {
             "name": "DispositivosAsignados",
             "type": "hasMany",
-            "class": "App\\DispositivoAsignado"
+            "class": "App\\DispositivosAsignado"
         }
     ],
     "validations": [

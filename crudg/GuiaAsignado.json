@@ -1,0 +1,46 @@
+{
+	"model_name":"GuiaAsignado",	
+	"pagination":50,
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"GuiasAsignados",
+    "fields": [		
+       {
+            "name": "paquete_id",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "guia_id",
+            "type": "integer#unsigned"
+        }
+
+        ],
+    "relationships": [
+        {
+            "name": "Paquetes",
+            "type": "hasMany",
+            "class": "App\\Paquete"
+        },
+        {
+            "name": "Guias",
+            "type": "hasMany",
+            "class": "App\\Guia"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "paquete_id",
+            "references": "id",
+            "on": "Paquetes",
+            "onDelete": "cascade"
+        },
+        {
+            "column": "guia_id",
+            "references": "id",
+            "on": "Guias",
+            "onDelete": "cascade"
+        }
+        ]
+	
+}
