@@ -13,10 +13,6 @@
         {
             "name": "hora",
             "type": "number"
-        },
-        {
-            "name": "Dispositivo_id",
-             "type": "integer#unsigned"
         }
     ],
     "relationships": [
@@ -28,11 +24,5 @@
     ],
     
     "foreign_keys": [
-        {
-            "column": "Dispositivo_id",
-            "references": "id",
-            "on": "Dispositivos",
-            "onDelete": "cascade"
-        }
         ]
 }

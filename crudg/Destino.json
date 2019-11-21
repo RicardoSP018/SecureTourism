@@ -20,27 +20,11 @@
             "name": "Paquete",
             "type": "belongsTo",
             "class": "App\\Paquete"
-        },
-        {
-            "name": "PaqueteAdquirido",
-            "type": "belongsTo",
-            "class": "App\\PaqueteAdquirido"
         }
     ],
     "foreign_keys": [
-        {
-            "column": "Paquete_id",
-            "references": "id",
-            "on": "Paquetes",
-            "onDelete": "cascade"
-        },
-        {
-            "column": "PaqueteAdquirido_id",
-            "references": "id",
-            "on": "PaquetesAdquiridos",
-            "onDelete": "cascade"
-        }
         ],
+    
     "validations": [
         {
             "field": "nombre",

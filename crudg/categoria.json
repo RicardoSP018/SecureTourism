@@ -17,8 +17,20 @@
         {
             "name": "imagen",
             "type": "file"
+        },
+        {
+            "name": "paquete_id",
+            "type": "integer#unsigned"
         }
     ],
+    "foreign_keys": [
+        {
+            "column": "paquete_id",
+            "references": "id",
+            "on": "Paquetes",
+            "onDelete": "cascade"
+        }
+        ],
     "relationships": [
         {
             "name": "Paquetes",

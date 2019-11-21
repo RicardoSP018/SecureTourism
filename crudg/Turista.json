@@ -27,13 +27,13 @@
             "type": "string"
         },
         {
-            "name": "Usuario_id",
+            "name": "usuario_id",
              "type": "integer#unsigned"
         }
         ],
     "foreign_keys": [ 
     	{
-            "column": "Usuario_id",
+            "column": "usuario_id",
             "references": "id",
             "on": "Usuarios",
             "onDelete": "cascade"
@@ -47,7 +47,7 @@
         },
         {
             "name": "Usuarios",
-            "type": "belongsTo",
+            "type": "hasOne",
             "class": "App\\Usuario"
         }
     ],

@@ -40,22 +40,31 @@
             "type": "string"
         },
         {
-            "name": "usuario_id",
-            "type": "integer#unsigned"
-        },
-         {
             "name": "suscripcion_id",
-            "type": "integer#unsigned"
-        }
+             "type": "integer#unsigned"
+        }   
+
         ],
     "foreign_keys": [
+         {
+            "column": "suscripcion_id",
+            "references": "id",
+            "on": "Suscripciones",
+            "onDelete": "cascade"
+        }
     ],
      
      "relationships": [
-        {
-            "name": "Administradores",
+    
+         {
+            "name": "Suscripciones",
             "type": "hasOne",
-            "class": "App\\Administrador"
+            "class": "App\\Suscripcione"
+        },
+         {
+            "name": "Administradores",
+            "type": "belongsTo",
+            "class": "App\\Administradore"
         }
     ],
 

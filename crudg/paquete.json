@@ -27,16 +27,26 @@
             "type": "file"
         },
         {
-            "name": "PaqueteAdquirido_id",
+            "name": "paqueteAdquirido_id",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "destino_id",
             "type": "integer#unsigned"
         }
     ],
 
     "foreign_keys": [
         {
-            "column": "PaqueteAdquirido_id",
+            "column": "paqueteAdquirido_id",
             "references": "id",
             "on": "PaquetesAdquiridos",
+            "onDelete": "cascade"
+        },
+         {
+            "column": "destino_id",
+            "references": "id",
+            "on": "Destinos",
             "onDelete": "cascade"
         }
         ],
@@ -50,6 +60,11 @@
             "name": "PromocionesAsignadas",
             "type": "belongsTo",
             "class": "App\\Promocion"
+        },
+        {
+            "name": "Destinos",
+            "type": "hasOne",
+            "class": "App\\Destino"
         }
     ],
     "validations": [

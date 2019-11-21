@@ -4,7 +4,7 @@
 	"soft_deletes":"yes",
 	"pk":"id",
 	"localize":"yes",
-	"table":"dispositivos",
+	"table":"Dispositivos",
     "fields": [		
         {
             "name": "nombre",
@@ -19,21 +19,21 @@
             "name": "estado",
             "type": "string"
         }
-        
+        ,
         {
             "name": "Imagen",
             "type": "file"
         },
         {
-            "name": "DispositivoAsignado_id",
+            "name": "waypoint_id",
              "type": "integer#unsigned"
         }
         ],
      "foreign_keys": [
         {
-            "column": "DispositivoAsignado_id",
+            "column": "waypoint_id",
             "references": "id",
-            "on": "dispositivosAsignados",
+            "on": "Waypoints",
             "onDelete": "cascade"
         }
     ],
@@ -42,6 +42,11 @@
             "name": "Waypoints",
             "type": "hasMany",
             "class": "App\\Waypoint"
+        },
+         {
+            "name": "DispositivosAsignados",
+            "type": "belongsTo",
+            "class": "App\\DispositivosAsignado"
         }
     ],
 

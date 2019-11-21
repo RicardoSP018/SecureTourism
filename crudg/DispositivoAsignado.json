@@ -18,13 +18,13 @@
         }
         ,
         {
-            "name": "Dispositivo_id",
+            "name": "dispositivo_id",
              "type": "integer#unsigned"
         }
         ],
      "foreign_keys": [
         {
-            "column": "Dispositivo_id",
+            "column": "dispositivo_id",
             "references": "id",
             "on": "Dispositivos",
             "onDelete": "cascade"
@@ -38,9 +38,9 @@
         },
         {
             "name": "PaquetesAdquiridos",
-            "type": "hasMany",
+            "type": "belongsTo",
             "class": "App\\PaquetesAdquirido"
-        },
+        }
 
     ]
     

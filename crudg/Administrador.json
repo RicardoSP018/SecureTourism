@@ -25,33 +25,38 @@
             "name": "telefono",
             "type": "password"
         },
+        
         {
-            "name": "Agencias_id",
+            "name": "usuario_id",
+             "type": "integer#unsigned"
+        },
+        {
+            "name": "agencia_id",
              "type": "integer#unsigned"
         }
 
         ],
     "relationships": [
         {
+            "name": "Usuarios",
+            "type": "hasOne",
+            "class": "App\\Usuario"
+        },
+         {
             "name": "Agencias",
             "type": "hasOne",
             "class": "App\\Agencia"
-        },
-        {
-            "name": "Usuarios",
-            "type": "belongsTo",
-            "class": "App\\Usuario"
         }
     ],
     "foreign_keys": [
         {
-            "column": "Agencia_id",
+            "column": "agencia_id",
             "references": "id",
             "on": "Agencias",
             "onDelete": "cascade"
         },
         {
-            "column": "Usuario_id",
+            "column": "usuario_id",
             "references": "id",
             "on": "Usuarios",
             "onDelete": "cascade"

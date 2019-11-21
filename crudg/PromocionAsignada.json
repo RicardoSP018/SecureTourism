@@ -7,24 +7,24 @@
     "table":"PromocionesAsignadas",
     "fields": [
        {
-            "name": "Paquete_id",
+            "name": "paquete_id",
             "type": "integer#unsigned"
         },
         {
-            "name": "Promocion_id",
+            "name": "promocion_id",
             "type": "integer#unsigned"
         }
         ],
 
 "foreign_keys": [
         {
-            "column": "Paquete_id",
+            "column": "paquete_id",
             "references": "id",
             "on": "Paquetes",
             "onDelete": "cascade"
         },
         {
-            "column": "Promocion_id",
+            "column": "promocion_id",
             "references": "id",
             "on": "Promociones",
             "onDelete": "cascade"

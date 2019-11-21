@@ -30,28 +30,16 @@
     "relationships": [
         {
             "name": "Administradores",
-            "type": "hasOne",
-            "class": "App\\Administrador"
+            "type": "belongsTo",
+            "class": "App\\Administradore"
         },
         {
             "name": "Turistas",
-            "type": "hasOne",
+            "type": "belongsTo",
             "class": "App\\Turista"
         }
     ],
     "foreign_keys": [
-        {
-            "column": "Turista_id",
-            "references": "id",
-            "on": "Turistas",
-            "onDelete": "cascade"
-        },
-        {
-            "column": "Administrador_id",
-            "references": "id",
-            "on": "Administradores",
-            "onDelete": "cascade"
-        }
         ],
 
     "validations": [

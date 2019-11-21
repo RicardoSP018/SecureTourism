@@ -16,26 +16,16 @@
         {
             "name": "vencimiento",
             "type": "string"
-        },
-        {
-            "name": "Agencias_id",
-             "type": "integer#unsigned"
-        }         
+        }      
     ],
      "relationships": [
         {
-            "name": "Agencias",
+            "name": "Suscripciones",
             "type": "belongsTo",
-            "class": "App\\Agencia"
+            "class": "App\\Suscripcione"
         }
     ],
      "foreign_keys": [
-        {
-            "column": "Agencias_id",
-            "references": "id",
-            "on": "Agencias",
-            "onDelete": "cascade"
-        }
         ],
     "validations": [
         {

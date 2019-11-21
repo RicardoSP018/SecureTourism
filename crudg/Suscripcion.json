@@ -16,13 +16,19 @@
         {
             "name": "vencimiento",
             "type": "string"
-        },
-        {
-            "name": "Agencias_id",
+        }, 
+         {
+            "name": "servicio_id",
              "type": "integer#unsigned"
-        }         
+        }
+ 
     ],
      "relationships": [
+        {
+            "name": "Servicios",
+            "type": "hasMany",
+            "class": "App\\Servicio"
+        },
         {
             "name": "Agencias",
             "type": "belongsTo",
@@ -31,12 +37,13 @@
     ],
      "foreign_keys": [
         {
-            "column": "Agencias_id",
+            "column": "servicio_id",
             "references": "id",
-            "on": "Agencias",
+            "on": "Servicios",
             "onDelete": "cascade"
         }
         ],
+
     "validations": [
         {
             "field": "estado",
