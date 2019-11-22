@@ -21,9 +21,10 @@ class UsuariosController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $usuarios = Usuario::where('Username', 'LIKE', "%$keyword%")
-                ->orWhere('Correo', 'LIKE', "%$keyword%")
-                ->orWhere('Contrasena', 'LIKE', "%$keyword%")
+            $usuarios = Usuario::where('username', 'LIKE', "%$keyword%")
+                ->orWhere('correo', 'LIKE', "%$keyword%")
+                ->orWhere('contrasena', 'LIKE', "%$keyword%")
+                ->orWhere('tipo', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
             $usuarios = Usuario::latest()->paginate($perPage);
@@ -52,9 +53,9 @@ class UsuariosController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-			'Username' => 'required|min:3|max:50',
-			'Correo' => 'required|min:5',
-			'Contrasena' => 'required|min:8'
+			'username' => 'required|min:3|max:50',
+			'correo' => 'required|min:5',
+			'contrasena' => 'required|min:8'
 		]);
         $requestData = $request->all();
         
@@ -102,9 +103,9 @@ class UsuariosController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-			'Username' => 'required|min:3|max:50',
-			'Correo' => 'required|min:5',
-			'Contrasena' => 'required|min:8'
+			'username' => 'required|min:3|max:50',
+			'correo' => 'required|min:5',
+			'contrasena' => 'required|min:8'
 		]);
         $requestData = $request->all();
         

@@ -1,20 +1,22 @@
-@extends('adminlte::layouts.app')
+@extends('layouts.app')
 
-@section('main-content')
+@section('content')
     <div class="container">
         <div class="row">
+            @include('admin.sidebar')
+
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">suscripcione {{ $suscripcione->id }}</div>
+                    <div class="card-header">Suscripcione {{ $suscripcione->id }}</div>
                     <div class="card-body">
 
                         <a href="{{ url('/suscripciones') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
-                        <a href="{{ url('/suscripciones/' . $suscripcione->id . '/edit') }}" title="Edit suscripcione"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                        <a href="{{ url('/suscripciones/' . $suscripcione->id . '/edit') }}" title="Edit Suscripcione"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
 
                         <form method="POST" action="{{ url('suscripciones' . '/' . $suscripcione->id) }}" accept-charset="UTF-8" style="display:inline">
                             {{ method_field('DELETE') }}
                             {{ csrf_field() }}
-                            <button type="submit" class="btn btn-danger btn-sm" title="Delete suscripcione" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                            <button type="submit" class="btn btn-danger btn-sm" title="Delete Suscripcione" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
                         </form>
                         <br/>
                         <br/>
@@ -25,7 +27,7 @@
                                     <tr>
                                         <th>ID</th><td>{{ $suscripcione->id }}</td>
                                     </tr>
-                                    <tr><th> Nombre </th><td> {{ $suscripcione->nombre }} </td></tr><tr><th> Descripcion </th><td> {{ $suscripcione->descripcion }} </td></tr><tr><th> Precio </th><td> {{ $suscripcione->precio }} </td></tr>
+                                    <tr><th> Nombre </th><td> {{ $suscripcione->nombre }} </td></tr><tr><th> Descripcion </th><td> {{ $suscripcione->descripcion }} </td></tr><tr><th> Estado </th><td> {{ $suscripcione->estado }} </td></tr>
                                 </tbody>
                             </table>
                         </div>

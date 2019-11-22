@@ -1,20 +1,22 @@
-@extends('adminlte::layouts.app')
+@extends('layouts.app')
 
-@section('main-content')
+@section('content')
     <div class="container">
         <div class="row">
+            @include('admin.sidebar')
+
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">agencia {{ $agencia->id }}</div>
+                    <div class="card-header">Agencia {{ $agencia->id }}</div>
                     <div class="card-body">
 
                         <a href="{{ url('/agencias') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
-                        <a href="{{ url('/agencias/' . $agencia->id . '/edit') }}" title="Edit agencia"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                        <a href="{{ url('/agencias/' . $agencia->id . '/edit') }}" title="Edit Agencia"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
 
                         <form method="POST" action="{{ url('agencias' . '/' . $agencia->id) }}" accept-charset="UTF-8" style="display:inline">
                             {{ method_field('DELETE') }}
                             {{ csrf_field() }}
-                            <button type="submit" class="btn btn-danger btn-sm" title="Delete agencia" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                            <button type="submit" class="btn btn-danger btn-sm" title="Delete Agencia" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
                         </form>
                         <br/>
                         <br/>
@@ -25,7 +27,7 @@
                                     <tr>
                                         <th>ID</th><td>{{ $agencia->id }}</td>
                                     </tr>
-                                    <tr><th> NombreAgencia </th><td> {{ $agencia->NombreAgencia }} </td></tr><tr><th> NombreDueno </th><td> {{ $agencia->NombreDueno }} </td></tr><tr><th> Telefono </th><td> {{ $agencia->Telefono }} </td></tr>
+                                    <tr><th> NombreAgencia </th><td> {{ $agencia->nombreAgencia }} </td></tr><tr><th> NombreDueno </th><td> {{ $agencia->nombreDueno }} </td></tr><tr><th> Telefono </th><td> {{ $agencia->telefono }} </td></tr>
                                 </tbody>
                             </table>
                         </div>

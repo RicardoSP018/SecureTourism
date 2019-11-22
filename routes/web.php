@@ -36,11 +36,19 @@ Route::group(['middleware' => 'auth'], function () {
     #adminlte_routes
 });
 Route::resource('usuarios', 'UsuariosController');
-Route::resource('suscripciones', 'suscripcionesController');
-Route::resource('agencias', 'agenciasController');
-Route::resource('proveedores', 'proveedoresController');
-Route::resource('productos', 'productosController');
-Route::resource('categorias', 'CategoriasController');
-Route::resource('promociones', 'PromocionesController');
-Route::resource('guias', 'GuiasController');
+Route::resource('administradores', 'AdministradoresController');
+Route::resource('turistas', 'TuristasController');
 Route::resource('paquetes', 'PaquetesController');
+Route::resource('paquetes-adquiridos', 'PaquetesAdquiridosController');
+Route::resource('dispositivos', 'DispositivosController');
+Route::resource('dispositivos-asignados', 'DispositivosAsignadosController');
+Route::resource('waypoints', 'WaypointsController');
+Route::resource('destinos', 'DestinosController');
+Route::resource('guias', 'GuiasController');
+Route::resource('guias-asignados', 'GuiasAsignadosController');
+Route::resource('agencias', 'AgenciasController');
+Route::resource('categorias', 'CategoriasController');
+Route::resource('suscripciones', 'SuscripcionesController');
+Route::resource('servicios', 'ServiciosController');
+Route::resource('promociones', 'PromocionesController');
+Route::resource('promociones-asignadas', 'PromocionesAsignadasController');

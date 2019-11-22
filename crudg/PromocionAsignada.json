@@ -34,12 +34,12 @@
     "relationships": [
         {
             "name": "Paquetes",
-            "type": "HasMany",
+            "type": "belongsTo",
             "class": "App\\Paquete"
         },
         {
             "name": "Promociones",
-            "type": "HasMany",
+            "type": "belongsTo",
             "class": "App\\Promocione"
         }
     ]

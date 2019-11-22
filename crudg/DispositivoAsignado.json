@@ -20,9 +20,19 @@
         {
             "name": "dispositivo_id",
              "type": "integer#unsigned"
+        },
+        {
+            "name": "paqueteAd_id",
+             "type": "integer#unsigned"
         }
         ],
      "foreign_keys": [
+        {
+            "column": "paqueteAd_id",
+            "references": "id",
+            "on": "paquetes_adquiridos",
+            "onDelete": "cascade"
+        },
         {
             "column": "dispositivo_id",
             "references": "id",
@@ -33,13 +43,18 @@
     "relationships": [
         {
             "name": "Dispositivos",
-            "type": "hasMany",
+            "type": "belongsTo",
             "class": "App\\Dispositivo"
         },
         {
             "name": "PaquetesAdquiridos",
             "type": "belongsTo",
             "class": "App\\PaquetesAdquirido"
+        },
+         {
+            "name": "Waypoints",
+            "type": "hasMany",
+            "class": "App\\Waypoint"
         }
 
     ]

@@ -40,16 +40,16 @@
             "type": "string"
         },
         {
-            "name": "suscripcion_id",
+            "name": "administrador_id",
              "type": "integer#unsigned"
         }   
 
         ],
     "foreign_keys": [
          {
-            "column": "suscripcion_id",
+            "column": "administrador_id",
             "references": "id",
-            "on": "Suscripciones",
+            "on": "Administradores",
             "onDelete": "cascade"
         }
     ],
@@ -75,11 +75,7 @@
         },
 		{
             "field": "descripcion",
-            "rules": "required|min:10|max:50"
-        },
-		{
-            "field": "nombreDueno",
-            "rules": "required|min:10|max:50"
+            "rules": "required|min:5|max:50"
         },
         {
             "field": "direccion",

@@ -25,19 +25,27 @@ class Paquete extends Model
      *
      * @var array
      */
-    protected $fillable = ['Nombre', 'descripcion', 'contenido', 'destino', 'precio', 'imagen', 'categoria_id', 'promocion_id', 'guia_id'];
+    protected $fillable = ['nombre', 'descripcion', 'contenido', 'duracion', 'imagen'];
 
-    public function categorias()
+    public function PaquetesAdquiridos()
     {
-        return $this->belongsTo('App\Categoria');
+        return $this->hasOne('App\PaquetesAdquirido');
     }
-    public function guias()
+    public function Categorias()
     {
-        return $this->hasMany('App\Guia');
+        return $this->hasMany('App\Categoria');
     }
-    public function promociones()
+    public function PromocionesAsignadas()
     {
         return $this->hasOne('App\Promocion');
+    }
+    public function Destinos()
+    {
+        return $this->hasOne('App\Destino');
+    }
+    public function GuiasAsignados()
+    {
+        return $this->hasMany('App\GuiasAsignado');
     }
     
 }

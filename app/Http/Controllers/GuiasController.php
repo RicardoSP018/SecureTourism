@@ -21,11 +21,10 @@ class GuiasController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $guias = Guia::where('Nombre', 'LIKE', "%$keyword%")
+            $guias = Guia::where('nombre', 'LIKE', "%$keyword%")
                 ->orWhere('apellido', 'LIKE', "%$keyword%")
-                ->orWhere('edad', 'LIKE', "%$keyword%")
-                ->orWhere('genero', 'LIKE', "%$keyword%")
-                ->orWhere('precio', 'LIKE', "%$keyword%")
+                ->orWhere('fechaNac', 'LIKE', "%$keyword%")
+                ->orWhere('redesSociales', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
             $guias = Guia::latest()->paginate($perPage);
@@ -54,7 +53,7 @@ class GuiasController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-			'Nombre' => 'required|min:3|max:20'
+			'nombre' => 'required|min:3|max:20'
 		]);
         $requestData = $request->all();
         
@@ -102,7 +101,7 @@ class GuiasController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-			'Nombre' => 'required|min:3|max:20'
+			'nombre' => 'required|min:3|max:20'
 		]);
         $requestData = $request->all();
         

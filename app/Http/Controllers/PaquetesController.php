@@ -21,15 +21,11 @@ class PaquetesController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $paquetes = Paquete::where('Nombre', 'LIKE', "%$keyword%")
+            $paquetes = Paquete::where('nombre', 'LIKE', "%$keyword%")
                 ->orWhere('descripcion', 'LIKE', "%$keyword%")
                 ->orWhere('contenido', 'LIKE', "%$keyword%")
-                ->orWhere('destino', 'LIKE', "%$keyword%")
-                ->orWhere('precio', 'LIKE', "%$keyword%")
+                ->orWhere('duracion', 'LIKE', "%$keyword%")
                 ->orWhere('imagen', 'LIKE', "%$keyword%")
-                ->orWhere('categoria_id', 'LIKE', "%$keyword%")
-                ->orWhere('promocion_id', 'LIKE', "%$keyword%")
-                ->orWhere('guia_id', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
             $paquetes = Paquete::latest()->paginate($perPage);
@@ -57,9 +53,7 @@ class PaquetesController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-			'Nombre' => 'required|min:3|max:20'
-		]);
+        
         $requestData = $request->all();
                 if ($request->hasFile('imagen')) {
             $requestData['imagen'] = $request->file('imagen')
@@ -109,9 +103,7 @@ class PaquetesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-			'Nombre' => 'required|min:3|max:20'
-		]);
+        
         $requestData = $request->all();
                 if ($request->hasFile('imagen')) {
             $requestData['imagen'] = $request->file('imagen')

@@ -23,38 +23,18 @@
         {
             "name": "Imagen",
             "type": "file"
-        },
-        {
-            "name": "waypoint_id",
-             "type": "integer#unsigned"
         }
-        ],
-     "foreign_keys": [
-        {
-            "column": "waypoint_id",
-            "references": "id",
-            "on": "Waypoints",
-            "onDelete": "cascade"
-        }
-    ],
+        ]
+    ,
     "relationships": [
-        {
-            "name": "Waypoints",
-            "type": "hasMany",
-            "class": "App\\Waypoint"
-        },
          {
             "name": "DispositivosAsignados",
-            "type": "belongsTo",
+            "type": "hasMany",
             "class": "App\\DispositivosAsignado"
         }
     ],
 
     "validations": [
-        {
-            "field": "nombre",
-            "rules": "required|max:10"
-        },
         {
             "field": "alcance",
             "rules": "required|max:10"

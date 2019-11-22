@@ -25,7 +25,11 @@ class Categoria extends Model
      *
      * @var array
      */
-    protected $fillable = ['nombre', 'descripcion', 'imagen'];
+    protected $fillable = ['nombre', 'descripcion', 'imagen', 'paquete_id'];
 
+    public function Paquetes()
+    {
+        return $this->belongsTo('App\Paquete');
+    }
     
 }

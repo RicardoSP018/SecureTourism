@@ -11,7 +11,7 @@
             "type": "string"
         },
         {
-            "name": "requsitos",
+            "name": "requisitos",
             "type": "string"
         },
         {
@@ -19,23 +19,20 @@
             "type": "number"
         },
         {
-            "name": "duracion",
+            "name": "fechaInicio",
+            "type": "date"
+        },
+         {
+            "name": "fechaFinal",
             "type": "date"
         }
         ],
     "relationships": [
         {
             "name": "PromocionesAsignadas",
-            "type": "belongsTo",
+            "type": "hasMany",
             "class": "App\\PromocionAsignada"
         }
-    ],
-    "validations": [
-        {
-            "field": "nombre",
-            "rules": "required|min:3|max:20"
-        }
-
     ]
 	
 }

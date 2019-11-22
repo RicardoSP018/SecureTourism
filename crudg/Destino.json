@@ -13,6 +13,10 @@
         {
             "name": "cupoMax",
             "type": "string"
+        },
+         {
+            "name": "paquete_id",
+            "type": "integer#unsigned"
         }
         ],
     "relationships": [
@@ -23,13 +27,15 @@
         }
     ],
     "foreign_keys": [
+        {
+            "column": "paquete_id",
+            "references": "id",
+            "on": "Paquetes",
+            "onDelete": "cascade"
+        }
         ],
     
     "validations": [
-        {
-            "field": "nombre",
-            "rules": "required|min:3|max:20"
-        },
         {
             "field": "cupoMax",
             "rules": "required|max:2"

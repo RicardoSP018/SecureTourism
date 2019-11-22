@@ -5,12 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\suscripcione;
-use App\usuario;
-use App\agencia;
+use App\Agencia;
 use Illuminate\Http\Request;
 
-class agenciasController extends Controller
+class AgenciasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,16 +21,17 @@ class agenciasController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $agencias = agencia::where('NombreAgencia', 'LIKE', "%$keyword%")
-                ->orWhere('NombreDueno', 'LIKE', "%$keyword%")
-                ->orWhere('Telefono', 'LIKE', "%$keyword%")
-                ->orWhere('Descripcion', 'LIKE', "%$keyword%")
-                ->orWhere('Direccion', 'LIKE', "%$keyword%")
-                ->orWhere('usuario_id', 'LIKE', "%$keyword%")
-                ->orWhere('suscripcion_id', 'LIKE', "%$keyword%")
+            $agencias = Agencia::where('nombreAgencia', 'LIKE', "%$keyword%")
+                ->orWhere('nombreDueno', 'LIKE', "%$keyword%")
+                ->orWhere('telefono', 'LIKE', "%$keyword%")
+                ->orWhere('descripcion', 'LIKE', "%$keyword%")
+                ->orWhere('direccion', 'LIKE', "%$keyword%")
+                ->orWhere('correo', 'LIKE', "%$keyword%")
+                ->orWhere('redesSociales', 'LIKE', "%$keyword%")
+                ->orWhere('administrador_id', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
-            $agencias = agencia::latest()->paginate($perPage);
+            $agencias = Agencia::latest()->paginate($perPage);
         }
 
         return view('agencias.index', compact('agencias'));
@@ -45,9 +44,7 @@ class agenciasController extends Controller
      */
     public function create()
     {
-        $suscripciones = suscripcione::all();
-        $usuarios = usuario::all();
-        return view('agencias.create', compact('usuarios'),compact('suscripciones'));
+        return view('agencias.create');
     }
 
     /**
@@ -60,15 +57,15 @@ class agenciasController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-			'Telefono' => 'required|max:10',
-			'Descripcion' => 'required|min:10|max:50',
-			'Direccion' => 'required|min:8'
+			'telefono' => 'required|max:10',
+			'descripcion' => 'required|min:5|max:50',
+			'direccion' => 'required|min:8'
 		]);
         $requestData = $request->all();
         
-        agencia::create($requestData);
+        Agencia::create($requestData);
 
-        return redirect('agencias')->with('flash_message', 'agencia added!');
+        return redirect('agencias')->with('flash_message', 'Agencia added!');
     }
 
     /**
@@ -80,7 +77,7 @@ class agenciasController extends Controller
      */
     public function show($id)
     {
-        $agencia = agencia::findOrFail($id);
+        $agencia = Agencia::findOrFail($id);
 
         return view('agencias.show', compact('agencia'));
     }
@@ -94,11 +91,9 @@ class agenciasController extends Controller
      */
     public function edit($id)
     {
-        $agencia = agencia::findOrFail($id);
-        $usuarios = usuario::all();
-        $suscripciones = suscripcione::all();
+        $agencia = Agencia::findOrFail($id);
 
-        return view('agencias.edit', compact('agencia','usuarios','suscripciones'));
+        return view('agencias.edit', compact('agencia'));
     }
 
     /**
@@ -112,16 +107,16 @@ class agenciasController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-			'Telefono' => 'required|max:10',
-			'Descripcion' => 'required|min:10|max:50',
-			'Direccion' => 'required|min:8'
+			'telefono' => 'required|max:10',
+			'descripcion' => 'required|min:5|max:50',
+			'direccion' => 'required|min:8'
 		]);
         $requestData = $request->all();
         
-        $agencia = agencia::findOrFail($id);
+        $agencia = Agencia::findOrFail($id);
         $agencia->update($requestData);
 
-        return redirect('agencias')->with('flash_message', 'agencia updated!');
+        return redirect('agencias')->with('flash_message', 'Agencia updated!');
     }
 
     /**
@@ -133,8 +128,8 @@ class agenciasController extends Controller
      */
     public function destroy($id)
     {
-        agencia::destroy($id);
+        Agencia::destroy($id);
 
-        return redirect('agencias')->with('flash_message', 'agencia deleted!');
+        return redirect('agencias')->with('flash_message', 'Agencia deleted!');
     }
 }

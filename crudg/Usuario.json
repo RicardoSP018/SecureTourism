@@ -30,12 +30,12 @@
     "relationships": [
         {
             "name": "Administradores",
-            "type": "belongsTo",
+            "type": "hasOne",
             "class": "App\\Administradore"
         },
         {
             "name": "Turistas",
-            "type": "belongsTo",
+            "type": "hasOne",
             "class": "App\\Turista"
         }
     ],
@@ -44,15 +44,15 @@
 
     "validations": [
         {
-            "field": "Username",
+            "field": "username",
             "rules": "required|min:3|max:50"
         },
 		{
-            "field": "Correo",
+            "field": "correo",
             "rules": "required|min:5"
         },
         {
-            "field": "Contrasena",
+            "field": "contrasena",
             "rules": "required|min:8"
         }
     ]

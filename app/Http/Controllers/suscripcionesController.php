@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\suscripcione;
+use App\Suscripcione;
 use Illuminate\Http\Request;
 
-class suscripcionesController extends Controller
+class SuscripcionesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,12 +21,15 @@ class suscripcionesController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $suscripciones = suscripcione::where('nombre', 'LIKE', "%$keyword%")
+            $suscripciones = Suscripcione::where('nombre', 'LIKE', "%$keyword%")
                 ->orWhere('descripcion', 'LIKE', "%$keyword%")
-                ->orWhere('precio', 'LIKE', "%$keyword%")
+                ->orWhere('estado', 'LIKE', "%$keyword%")
+                ->orWhere('inicio', 'LIKE', "%$keyword%")
+                ->orWhere('vencimiento', 'LIKE', "%$keyword%")
+                ->orWhere('agencia_id', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
-            $suscripciones = suscripcione::latest()->paginate($perPage);
+            $suscripciones = Suscripcione::latest()->paginate($perPage);
         }
 
         return view('suscripciones.index', compact('suscripciones'));
@@ -52,13 +55,13 @@ class suscripcionesController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-			'nombre' => 'required|min:5|max:20'
+			'estado' => 'required|min:5|max:20'
 		]);
         $requestData = $request->all();
         
-        suscripcione::create($requestData);
+        Suscripcione::create($requestData);
 
-        return redirect('suscripciones')->with('flash_message', 'suscripcione added!');
+        return redirect('suscripciones')->with('flash_message', 'Suscripcione added!');
     }
 
     /**
@@ -70,7 +73,7 @@ class suscripcionesController extends Controller
      */
     public function show($id)
     {
-        $suscripcione = suscripcione::findOrFail($id);
+        $suscripcione = Suscripcione::findOrFail($id);
 
         return view('suscripciones.show', compact('suscripcione'));
     }
@@ -84,7 +87,7 @@ class suscripcionesController extends Controller
      */
     public function edit($id)
     {
-        $suscripcione = suscripcione::findOrFail($id);
+        $suscripcione = Suscripcione::findOrFail($id);
 
         return view('suscripciones.edit', compact('suscripcione'));
     }
@@ -100,14 +103,14 @@ class suscripcionesController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-			'nombre' => 'required|min:5|max:20'
+			'estado' => 'required|min:5|max:20'
 		]);
         $requestData = $request->all();
         
-        $suscripcione = suscripcione::findOrFail($id);
+        $suscripcione = Suscripcione::findOrFail($id);
         $suscripcione->update($requestData);
 
-        return redirect('suscripciones')->with('flash_message', 'suscripcione updated!');
+        return redirect('suscripciones')->with('flash_message', 'Suscripcione updated!');
     }
 
     /**
@@ -119,8 +122,8 @@ class suscripcionesController extends Controller
      */
     public function destroy($id)
     {
-        suscripcione::destroy($id);
+        Suscripcione::destroy($id);
 
-        return redirect('suscripciones')->with('flash_message', 'suscripcione deleted!');
+        return redirect('suscripciones')->with('flash_message', 'Suscripcione deleted!');
     }
 }

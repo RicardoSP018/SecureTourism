@@ -1,8 +1,10 @@
-@extends('adminlte::layouts.app')
+@extends('layouts.app')
 
-@section('main-content')
+@section('content')
     <div class="container">
         <div class="row">
+            @include('admin.sidebar')
+
             <div class="col-md-9">
                 <div class="card">
                     <div class="card-header">Usuario {{ $usuario->id }}</div>
@@ -25,7 +27,7 @@
                                     <tr>
                                         <th>ID</th><td>{{ $usuario->id }}</td>
                                     </tr>
-                                    <tr><th> Username </th><td> {{ $usuario->Username }} </td></tr><tr><th> Correo </th><td> {{ $usuario->Correo }} </td></tr><tr><th> Contrasena </th><td> {{ $usuario->Contrasena }} </td></tr>
+                                    <tr><th> Username </th><td> {{ $usuario->username }} </td></tr><tr><th> Correo </th><td> {{ $usuario->correo }} </td></tr><tr><th> Contrasena </th><td> {{ $usuario->contrasena }} </td></tr>
                                 </tbody>
                             </table>
                         </div>

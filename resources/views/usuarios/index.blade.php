@@ -1,20 +1,21 @@
-@extends('adminlte::layouts.app')
+@extends('layouts.app')
 
-@section('main-content')
+@section('content')
     <div class="container">
         <div class="row">
+            @include('admin.sidebar')
+
             <div class="col-md-9">
                 <div class="card">
-                    <h1><div class="card-header">Usuarios</div></h1>
+                    <div class="card-header">Usuarios</div>
                     <div class="card-body">
                         <a href="{{ url('/usuarios/create') }}" class="btn btn-success btn-sm" title="Add New Usuario">
-                            <i class="fa fa-plus" aria-hidden="true"></i> Nuevo usuario
+                            <i class="fa fa-plus" aria-hidden="true"></i> Add New
                         </a>
-<br>
-<br>
+
                         <form method="GET" action="{{ url('/usuarios') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
                             <div class="input-group">
-                                <input type="text" class="form-control" name="search" placeholder="Bucar usuario" value="{{ request('search') }}">
+                                <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request('search') }}">
                                 <span class="input-group-append">
                                     <button class="btn btn-secondary" type="submit">
                                         <i class="fa fa-search"></i>
@@ -36,7 +37,7 @@
                                 @foreach($usuarios as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->Username }}</td><td>{{ $item->Correo }}</td><td>{{ $item->Contrasena }}</td>
+                                        <td>{{ $item->username }}</td><td>{{ $item->correo }}</td><td>{{ $item->contrasena }}</td>
                                         <td>
                                             <a href="{{ url('/usuarios/' . $item->id) }}" title="View Usuario"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/usuarios/' . $item->id . '/edit') }}" title="Edit Usuario"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>

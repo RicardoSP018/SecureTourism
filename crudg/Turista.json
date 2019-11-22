@@ -42,28 +42,20 @@
         "relationships": [
         {
             "name": "PaquetesAdquiridos",
-            "type": "belongsTo",
-            "class": "App\\PaqueteAdquirido"
+            "type": "hasMany",
+            "class": "App\\PaquetesAdquirido"
         },
         {
             "name": "Usuarios",
-            "type": "hasOne",
+            "type": "belongsTo",
             "class": "App\\Usuario"
         }
     ],
 
     "validations": [
-        {
-            "field": "nombre",
-            "rules": "required|min:3"
-        },
-        {
-            "field": "apellido",
-            "rules": "required|min:10"
-        },
 		{
             "field": "email",
-            "rules": "required|min:10|max:50"
+            "rules": "required|min:5|max:50"
         }
     ]
 	

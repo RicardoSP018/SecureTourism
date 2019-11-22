@@ -24,6 +24,7 @@ class CategoriasController extends Controller
             $categorias = Categoria::where('nombre', 'LIKE', "%$keyword%")
                 ->orWhere('descripcion', 'LIKE', "%$keyword%")
                 ->orWhere('imagen', 'LIKE', "%$keyword%")
+                ->orWhere('paquete_id', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
             $categorias = Categoria::latest()->paginate($perPage);

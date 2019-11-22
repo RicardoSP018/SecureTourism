@@ -4,21 +4,29 @@
 	"pk":"id",
 	"localize":"yes",
 	"table":"Suscripciones",
-    "fields": [		
+    "fields": [	
+        {
+            "name": "nombre",
+            "type": "string"
+        },
+        {
+            "name": "descripcion",
+            "type": "string"
+        },	
         {
             "name": "estado",
             "type": "string"
         },
         {
             "name": "inicio",
-            "type": "string"
+            "type": "date"
         },
         {
             "name": "vencimiento",
-            "type": "string"
+            "type": "date"
         }, 
          {
-            "name": "servicio_id",
+            "name": "agencia_id",
              "type": "integer#unsigned"
         }
  
@@ -37,9 +45,9 @@
     ],
      "foreign_keys": [
         {
-            "column": "servicio_id",
+            "column": "agencia_id",
             "references": "id",
-            "on": "Servicios",
+            "on": "Agencias",
             "onDelete": "cascade"
         }
         ],

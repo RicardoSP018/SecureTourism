@@ -34,7 +34,7 @@
     "relationships": [
         {
             "name": "Paquetes",
-            "type": "hasMany",
+            "type": "belongsTo",
             "class": "App\\Paquete"
         }
     ],

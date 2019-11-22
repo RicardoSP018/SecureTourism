@@ -6,31 +6,32 @@
 	"table":"Servicios",
     "fields": [		
         {
-            "name": "estado",
+            "name": "tiempo",
             "type": "string"
         },
         {
-            "name": "inicio",
+            "name": "descripcion",
             "type": "string"
         },
         {
-            "name": "vencimiento",
-            "type": "string"
-        }      
+            "name": "suscripcion_id",
+             "type": "integer#unsigned"
+        }     
     ],
+    "foreign_keys": [
+        {
+            "column": "suscripcion_id",
+            "references": "id",
+            "on": "Suscripciones",
+            "onDelete": "cascade"
+        }
+        ],
+
      "relationships": [
         {
             "name": "Suscripciones",
             "type": "belongsTo",
             "class": "App\\Suscripcione"
-        }
-    ],
-     "foreign_keys": [
-        ],
-    "validations": [
-        {
-            "field": "estado",
-            "rules": "required|min:5|max:20"
         }
     ]
 }

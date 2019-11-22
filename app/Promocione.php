@@ -25,11 +25,11 @@ class Promocione extends Model
      *
      * @var array
      */
-    protected $fillable = ['nombre', 'requsitos', 'precio', 'fechaExpiracion'];
+    protected $fillable = ['nombre', 'requisitos', 'precio', 'fechaInicio', 'fechaFinal'];
 
-    public function paquete()
+    public function PromocionesAsignadas()
     {
-        return $this->belongsTo('App\Paquete');
+        return $this->hasMany('App\PromocionAsignada');
     }
     
 }

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class agencia extends Model
+class Agencia extends Model
 {
     /**
      * The database table used by the model.
@@ -25,15 +25,15 @@ class agencia extends Model
      *
      * @var array
      */
-    protected $fillable = ['NombreAgencia', 'NombreDueno', 'Telefono', 'Descripcion', 'Direccion', 'usuario_id', 'suscripcion_id'];
+    protected $fillable = ['nombreAgencia', 'nombreDueno', 'telefono', 'descripcion', 'direccion', 'correo', 'redesSociales', 'administrador_id'];
 
-    public function usuarios()
+    public function Suscripciones()
     {
-        return $this->belongsTo('App\Usuario');
+        return $this->hasOne('App\Suscripcione');
     }
-    public function suscripciones()
+    public function Administradores()
     {
-        return $this->hasOne('App\Suscripcion');
+        return $this->belongsTo('App\Administradore');
     }
     
 }

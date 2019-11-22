@@ -13,16 +13,26 @@
         {
             "name": "hora",
             "type": "number"
+        },
+        {
+            "name": "dispositivoA_id",
+            "type": "integer#unsigned"
         }
     ],
+    "foreign_keys": [
+       
+         {
+            "column": "dispositivoA_id",
+            "references": "id",
+            "on": "dispositivos_asignados",
+            "onDelete": "cascade"
+        }
+        ],
     "relationships": [
         {
-            "name": "Dispositivos",
+            "name": "DispositivosAsignados",
             "type": "belongsTo",
-            "class": "App\\Dispositivo"
+            "class": "App\\DispositivosAsignado"
         }
-    ],
-    
-    "foreign_keys": [
-        ]
+    ]
 }

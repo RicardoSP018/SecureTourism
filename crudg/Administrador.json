@@ -29,17 +29,13 @@
         {
             "name": "usuario_id",
              "type": "integer#unsigned"
-        },
-        {
-            "name": "agencia_id",
-             "type": "integer#unsigned"
         }
 
         ],
     "relationships": [
         {
             "name": "Usuarios",
-            "type": "hasOne",
+            "type": "belongsTo",
             "class": "App\\Usuario"
         },
          {
@@ -50,12 +46,6 @@
     ],
     "foreign_keys": [
         {
-            "column": "agencia_id",
-            "references": "id",
-            "on": "Agencias",
-            "onDelete": "cascade"
-        },
-        {
             "column": "usuario_id",
             "references": "id",
             "on": "Usuarios",
@@ -64,10 +54,6 @@
         ],
 
     "validations": [
-        {
-            "field": "nombre",
-            "rules": "required|min:3|max:50"
-        },
 		{
             "field": "correo",
             "rules": "required|min:5"

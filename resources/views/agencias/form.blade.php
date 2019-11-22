@@ -1,46 +1,44 @@
-<div class="form-group {{ $errors->has('NombreAgencia') ? 'has-error' : ''}}">
-    <label for="NombreAgencia" class="control-label">{{ 'Nombreagencia' }}</label>
-    <input class="form-control" name="NombreAgencia" type="text" id="NombreAgencia" value="{{ isset($agencia->NombreAgencia) ? $agencia->NombreAgencia : ''}}" >
-    {!! $errors->first('NombreAgencia', '<p class="help-block">:message</p>') !!}
+<div class="form-group {{ $errors->has('nombreAgencia') ? 'has-error' : ''}}">
+    <label for="nombreAgencia" class="control-label">{{ 'Nombreagencia' }}</label>
+    <input class="form-control" name="nombreAgencia" type="text" id="nombreAgencia" value="{{ isset($agencia->nombreAgencia) ? $agencia->nombreAgencia : ''}}" >
+    {!! $errors->first('nombreAgencia', '<p class="help-block">:message</p>') !!}
 </div>
-<div class="form-group {{ $errors->has('NombreDueno') ? 'has-error' : ''}}">
-    <label for="NombreDueno" class="control-label">{{ 'Nombredueno' }}</label>
-    <input class="form-control" name="NombreDueno" type="text" id="NombreDueno" value="{{ isset($agencia->NombreDueno) ? $agencia->NombreDueno : ''}}" >
-    {!! $errors->first('NombreDueno', '<p class="help-block">:message</p>') !!}
+<div class="form-group {{ $errors->has('nombreDueno') ? 'has-error' : ''}}">
+    <label for="nombreDueno" class="control-label">{{ 'Nombredueno' }}</label>
+    <input class="form-control" name="nombreDueno" type="text" id="nombreDueno" value="{{ isset($agencia->nombreDueno) ? $agencia->nombreDueno : ''}}" >
+    {!! $errors->first('nombreDueno', '<p class="help-block">:message</p>') !!}
 </div>
-<div class="form-group {{ $errors->has('Telefono') ? 'has-error' : ''}}">
-    <label for="Telefono" class="control-label">{{ 'Telefono' }}</label>
-    <input class="form-control" name="Telefono" type="text" id="Telefono" value="{{ isset($agencia->Telefono) ? $agencia->Telefono : ''}}" required>
-    {!! $errors->first('Telefono', '<p class="help-block">:message</p>') !!}
+<div class="form-group {{ $errors->has('telefono') ? 'has-error' : ''}}">
+    <label for="telefono" class="control-label">{{ 'Telefono' }}</label>
+    <input class="form-control" name="telefono" type="text" id="telefono" value="{{ isset($agencia->telefono) ? $agencia->telefono : ''}}" required>
+    {!! $errors->first('telefono', '<p class="help-block">:message</p>') !!}
 </div>
-<div class="form-group {{ $errors->has('Descripcion') ? 'has-error' : ''}}">
-    <label for="Descripcion" class="control-label">{{ 'Descripcion' }}</label>
-    <input class="form-control" name="Descripcion" type="text" id="Descripcion" value="{{ isset($agencia->Descripcion) ? $agencia->Descripcion : ''}}" required>
-    {!! $errors->first('Descripcion', '<p class="help-block">:message</p>') !!}
+<div class="form-group {{ $errors->has('descripcion') ? 'has-error' : ''}}">
+    <label for="descripcion" class="control-label">{{ 'Descripcion' }}</label>
+    <input class="form-control" name="descripcion" type="text" id="descripcion" value="{{ isset($agencia->descripcion) ? $agencia->descripcion : ''}}" required>
+    {!! $errors->first('descripcion', '<p class="help-block">:message</p>') !!}
 </div>
-<div class="form-group {{ $errors->has('Direccion') ? 'has-error' : ''}}">
-    <label for="Direccion" class="control-label">{{ 'Direccion' }}</label>
-    <input class="form-control" name="Direccion" type="text" id="Direccion" value="{{ isset($agencia->Direccion) ? $agencia->Direccion : ''}}" required>
-    {!! $errors->first('Direccion', '<p class="help-block">:message</p>') !!}
+<div class="form-group {{ $errors->has('direccion') ? 'has-error' : ''}}">
+    <label for="direccion" class="control-label">{{ 'Direccion' }}</label>
+    <input class="form-control" name="direccion" type="text" id="direccion" value="{{ isset($agencia->direccion) ? $agencia->direccion : ''}}" required>
+    {!! $errors->first('direccion', '<p class="help-block">:message</p>') !!}
 </div>
-<div class="form-group">
-    <label for="">Usuario</label>
-    <select name="usuario_id" id="inputUsuario_id" class="form-control">
-        @foreach ($usuarios as $usuario)
-        <option value ="{{ $usuario ['id'] }}">{{ $usuario['Username']
-        }}</option>
-        @endforeach
-    </select>
+<div class="form-group {{ $errors->has('correo') ? 'has-error' : ''}}">
+    <label for="correo" class="control-label">{{ 'Correo' }}</label>
+    <input class="form-control" name="correo" type="text" id="correo" value="{{ isset($agencia->correo) ? $agencia->correo : ''}}" >
+    {!! $errors->first('correo', '<p class="help-block">:message</p>') !!}
 </div>
-<div class="form-group">
-    <label for="">Suscripcion</label>
-    <select name="suscripcion_id" id="inputSuscripcion_id" class="form-control">
-        @foreach ($suscripciones as $suscripcione)
-        <option value ="{{ $suscripcione ['id'] }}">{{ $suscripcione['nombre']
-        }}</option>
-        @endforeach
-    </select>
+<div class="form-group {{ $errors->has('redesSociales') ? 'has-error' : ''}}">
+    <label for="redesSociales" class="control-label">{{ 'Redessociales' }}</label>
+    <input class="form-control" name="redesSociales" type="text" id="redesSociales" value="{{ isset($agencia->redesSociales) ? $agencia->redesSociales : ''}}" >
+    {!! $errors->first('redesSociales', '<p class="help-block">:message</p>') !!}
 </div>
+<div class="form-group {{ $errors->has('administrador_id') ? 'has-error' : ''}}">
+    <label for="administrador_id" class="control-label">{{ 'Administrador Id' }}</label>
+    <input class="form-control" name="administrador_id" type="number" id="administrador_id" value="{{ isset($agencia->administrador_id) ? $agencia->administrador_id : ''}}" >
+    {!! $errors->first('administrador_id', '<p class="help-block">:message</p>') !!}
+</div>
+
 
 <div class="form-group">
     <input class="btn btn-primary" type="submit" value="{{ $formMode === 'edit' ? 'Update' : 'Create' }}">

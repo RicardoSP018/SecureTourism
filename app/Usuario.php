@@ -25,11 +25,15 @@ class Usuario extends Model
      *
      * @var array
      */
-    protected $fillable = ['Username', 'Correo', 'Contrasena'];
+    protected $fillable = ['username', 'correo', 'contrasena', 'tipo'];
 
-    public function agencias()
+    public function Administradores()
     {
-        return $this->hasOne('App\Agencia');
+        return $this->hasOne('App\Administradore');
+    }
+    public function Turistas()
+    {
+        return $this->hasOne('App\Turista');
     }
     
 }

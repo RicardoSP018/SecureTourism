@@ -22,9 +22,10 @@ class PromocionesController extends Controller
 
         if (!empty($keyword)) {
             $promociones = Promocione::where('nombre', 'LIKE', "%$keyword%")
-                ->orWhere('requsitos', 'LIKE', "%$keyword%")
+                ->orWhere('requisitos', 'LIKE', "%$keyword%")
                 ->orWhere('precio', 'LIKE', "%$keyword%")
-                ->orWhere('fechaExpiracion', 'LIKE', "%$keyword%")
+                ->orWhere('fechaInicio', 'LIKE', "%$keyword%")
+                ->orWhere('fechaFinal', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
             $promociones = Promocione::latest()->paginate($perPage);
@@ -52,9 +53,7 @@ class PromocionesController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-			'nombre' => 'required|min:3|max:20'
-		]);
+        
         $requestData = $request->all();
         
         Promocione::create($requestData);
@@ -100,9 +99,7 @@ class PromocionesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-			'nombre' => 'required|min:3|max:20'
-		]);
+        
         $requestData = $request->all();
         
         $promocione = Promocione::findOrFail($id);

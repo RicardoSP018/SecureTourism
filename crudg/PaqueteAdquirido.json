@@ -25,10 +25,6 @@
         {
             "name": "paquete_id",
             "type": "integer#unsigned"
-        },
-        {
-            "name": "dispositivoasignado_id",
-            "type": "integer#unsigned"
         }
     ],
 
@@ -45,25 +41,18 @@
             "references": "id",
             "on": "Paquetes",
             "onDelete": "cascade"
-        },
-
-        {
-            "column": "dispositivoasignado_id",
-            "references": "id",
-            "on": "DispositivosAsignados",
-            "onDelete": "cascade"
         }
 
         ],
     "relationships": [
         {
             "name": "Turistas",
-            "type": "hasMany",
+            "type": "belongsTo",
             "class": "App\\Turista"
         },
         {
             "name": "Paquetes",
-            "type": "hasOne",
+            "type": "belongsTo",
             "class": "App\\Paquete"
         },
         {

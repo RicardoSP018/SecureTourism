@@ -25,11 +25,11 @@ class Guia extends Model
      *
      * @var array
      */
-    protected $fillable = ['Nombre', 'apellido', 'edad', 'genero', 'precio'];
+    protected $fillable = ['nombre', 'apellido', 'fechaNac', 'redesSociales'];
 
-    public function paquetes()
+    public function GuiasAsignados()
     {
-        return $this->belongsTo('App\Paquete');
+        return $this->HasMany('App\GuiasAsignado');
     }
     
 }

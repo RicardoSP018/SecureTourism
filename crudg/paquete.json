@@ -25,52 +25,37 @@
         {
             "name": "imagen",
             "type": "file"
-        },
-        {
-            "name": "paqueteAdquirido_id",
-            "type": "integer#unsigned"
-        },
-        {
-            "name": "destino_id",
-            "type": "integer#unsigned"
         }
     ],
 
     "foreign_keys": [
-        {
-            "column": "paqueteAdquirido_id",
-            "references": "id",
-            "on": "PaquetesAdquiridos",
-            "onDelete": "cascade"
-        },
-         {
-            "column": "destino_id",
-            "references": "id",
-            "on": "Destinos",
-            "onDelete": "cascade"
-        }
+       
         ],
     "relationships": [
         {
+            "name": "PaquetesAdquiridos",
+            "type": "hasOne",
+            "class": "App\\PaquetesAdquirido"
+        },
+        {
             "name": "Categorias",
-            "type": "belongsTo",
+            "type": "hasMany",
             "class": "App\\Categoria"
         },        
         {
             "name": "PromocionesAsignadas",
-            "type": "belongsTo",
+            "type": "hasOne",
             "class": "App\\Promocion"
         },
         {
             "name": "Destinos",
             "type": "hasOne",
             "class": "App\\Destino"
-        }
-    ],
-    "validations": [
+        },
         {
-            "field": "nombre",
-            "rules": "required|min:3|max:20"
+            "name": "GuiasAsignados",
+            "type": "hasMany",
+            "class": "App\\GuiasAsignado"
         }
 
     ]
