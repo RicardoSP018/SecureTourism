@@ -27,11 +27,11 @@ class Turista extends Model
      */
     protected $fillable = ['nombre', 'apellido', 'telefono', 'email', 'usuario_id'];
 
-    public function PaquetesAdquiridos()
+    public function paquete_adquiridos()
     {
-        return $this->hasMany('App\PaquetesAdquirido');
+        return $this->hasMany('App\PaqueteAdquirido');
     }
-    public function Usuarios()
+    public function usuarios()
     {
         return $this->belongsTo('App\Usuario');
     }

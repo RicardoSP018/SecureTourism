@@ -27,13 +27,17 @@ class Agencia extends Model
      */
     protected $fillable = ['nombreAgencia', 'nombreDueno', 'telefono', 'descripcion', 'direccion', 'correo', 'redesSociales', 'administrador_id'];
 
-    public function Suscripciones()
+    public function suscripcions()
     {
-        return $this->hasOne('App\Suscripcione');
+        return $this->hasOne('App\Suscripcion');
     }
-    public function Administradores()
+    public function administradors()
     {
-        return $this->belongsTo('App\Administradore');
+        return $this->belongsTo('App\Administrador');
+    }
+    public function guias()
+    {
+        return $this->hasMany('App\Guia');
     }
     
 }

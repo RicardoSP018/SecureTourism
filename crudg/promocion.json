@@ -4,7 +4,7 @@
     "soft_deletes":"yes",
     "pk":"id",
     "localize":"yes",
-    "table":"Promociones",
+    "table":"promocions",
     "fields": [
         {
             "name": "nombre",
@@ -29,7 +29,7 @@
         ],
     "relationships": [
         {
-            "name": "PromocionesAsignadas",
+            "name": "promocion_asignadas",
             "type": "hasMany",
             "class": "App\\PromocionAsignada"
         }

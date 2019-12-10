@@ -27,9 +27,9 @@ class Servicio extends Model
      */
     protected $fillable = ['tiempo', 'descripcion', 'suscripcion_id'];
 
-    public function Suscripciones()
+    public function suscripcions()
     {
-        return $this->belongsTo('App\Suscripcione');
+        return $this->belongsTo('App\Suscripcion');
     }
     
 }

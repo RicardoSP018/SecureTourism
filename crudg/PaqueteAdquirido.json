@@ -4,7 +4,7 @@
     "soft_deletes":"yes",
     "pk":"id",
     "localize":"yes",
-    "table":"PaquetesAdquiridos",
+    "table":"paqueteAdquiridos",
     "fields": [
         {
             "name": "fechaInicio",
@@ -27,38 +27,38 @@
             "type": "integer#unsigned"
         }
     ],
-
+    
     "foreign_keys": [
         {
             "column": "turista_id",
             "references": "id",
-            "on": "Turistas",
+            "on": "turistas",
             "onDelete": "cascade"
         },
 
         {
             "column": "paquete_id",
             "references": "id",
-            "on": "Paquetes",
+            "on": "paquetes",
             "onDelete": "cascade"
         }
 
         ],
     "relationships": [
         {
-            "name": "Turistas",
+            "name": "turistas",
             "type": "belongsTo",
             "class": "App\\Turista"
         },
         {
-            "name": "Paquetes",
+            "name": "paquetes",
             "type": "belongsTo",
             "class": "App\\Paquete"
         },
         {
-            "name": "DispositivosAsignados",
+            "name": "dispositivo_asignados",
             "type": "hasMany",
-            "class": "App\\DispositivosAsignado"
+            "class": "App\\DispositivoAsignado"
         }
     ],
     "validations": [

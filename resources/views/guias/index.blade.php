@@ -30,14 +30,14 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>Nombre</th><th>Apellido</th><th>FechaNac</th><th>Actions</th>
+                                        <th>#</th><th>Nombre</th><th>Apellido</th><th>Direccion</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($guias as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->nombre }}</td><td>{{ $item->apellido }}</td><td>{{ $item->fechaNac }}</td>
+                                        <td>{{ $item->nombre }}</td><td>{{ $item->apellido }}</td><td>{{ $item->direccion }}</td>
                                         <td>
                                             <a href="{{ url('/guias/' . $item->id) }}" title="View Guia"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/guias/' . $item->id . '/edit') }}" title="Edit Guia"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>

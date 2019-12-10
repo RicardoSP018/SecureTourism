@@ -30,14 +30,14 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>Fecha</th><th>Hora</th><th>DispositivoA Id</th><th>Actions</th>
+                                        <th>#</th><th>Fecha</th><th>Hora</th><th>Dispositivo Asignados Id</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($waypoints as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->fecha }}</td><td>{{ $item->hora }}</td><td>{{ $item->dispositivoA_id }}</td>
+                                        <td>{{ $item->fecha }}</td><td>{{ $item->hora }}</td><td>{{ $item->dispositivo_asignados_id }}</td>
                                         <td>
                                             <a href="{{ url('/waypoints/' . $item->id) }}" title="View Waypoint"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/waypoints/' . $item->id . '/edit') }}" title="Edit Waypoint"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>

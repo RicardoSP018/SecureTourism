@@ -27,7 +27,7 @@
                                     <tr>
                                         <th>ID</th><td>{{ $guia->id }}</td>
                                     </tr>
-                                    <tr><th> Nombre </th><td> {{ $guia->nombre }} </td></tr><tr><th> Apellido </th><td> {{ $guia->apellido }} </td></tr><tr><th> FechaNac </th><td> {{ $guia->fechaNac }} </td></tr>
+                                    <tr><th> Nombre </th><td> {{ $guia->nombre }} </td></tr><tr><th> Apellido </th><td> {{ $guia->apellido }} </td></tr><tr><th> Direccion </th><td> {{ $guia->direccion }} </td></tr>
                                 </tbody>
                             </table>
                         </div>

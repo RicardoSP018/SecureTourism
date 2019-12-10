@@ -1,10 +1,10 @@
-{
+{ 
 	"model_name":"GuiaAsignado",	
 	"pagination":50,
 	"soft_deletes":"yes",
 	"pk":"id",
 	"localize":"yes",
-	"table":"GuiasAsignados",
+	"table":"guiaAsignados",
     "fields": [		
        {
             "name": "paquete_id",
@@ -18,12 +18,12 @@
         ],
     "relationships": [
         {
-            "name": "Paquetes",
+            "name": "paquetes",
             "type": "belongsTo",
             "class": "App\\Paquete"
         },
         {
-            "name": "Guias",
+            "name": "guias",
             "type": "belongsTo",
             "class": "App\\Guia"
         }
@@ -32,13 +32,13 @@
         {
             "column": "paquete_id",
             "references": "id",
-            "on": "Paquetes",
+            "on": "paquetes",
             "onDelete": "cascade"
         },
         {
             "column": "guia_id",
             "references": "id",
-            "on": "Guias",
+            "on": "guias",
             "onDelete": "cascade"
         }
         ]

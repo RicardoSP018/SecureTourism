@@ -4,7 +4,7 @@
 	"soft_deletes":"yes",
 	"pk":"id",
 	"localize":"yes",
-	"table":"Turistas",
+	"table":"turistas",
     "fields": [		
         {
             "name": "nombre",
@@ -35,18 +35,18 @@
     	{
             "column": "usuario_id",
             "references": "id",
-            "on": "Usuarios",
+            "on": "usuarios",
             "onDelete": "cascade"
         }
     ],
         "relationships": [
         {
-            "name": "PaquetesAdquiridos",
+            "name": "paquete_adquiridos",
             "type": "hasMany",
-            "class": "App\\PaquetesAdquirido"
+            "class": "App\\PaqueteAdquirido"
         },
         {
-            "name": "Usuarios",
+            "name": "usuarios",
             "type": "belongsTo",
             "class": "App\\Usuario"
         }

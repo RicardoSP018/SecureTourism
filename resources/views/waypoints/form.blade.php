@@ -8,10 +8,10 @@
     <input class="form-control" name="hora" type="number" id="hora" value="{{ isset($waypoint->hora) ? $waypoint->hora : ''}}" >
     {!! $errors->first('hora', '<p class="help-block">:message</p>') !!}
 </div>
-<div class="form-group {{ $errors->has('dispositivoA_id') ? 'has-error' : ''}}">
-    <label for="dispositivoA_id" class="control-label">{{ 'Dispositivoa Id' }}</label>
-    <input class="form-control" name="dispositivoA_id" type="number" id="dispositivoA_id" value="{{ isset($waypoint->dispositivoA_id) ? $waypoint->dispositivoA_id : ''}}" >
-    {!! $errors->first('dispositivoA_id', '<p class="help-block">:message</p>') !!}
+<div class="form-group {{ $errors->has('dispositivo_asignados_id') ? 'has-error' : ''}}">
+    <label for="dispositivo_asignados_id" class="control-label">{{ 'Dispositivo Asignados Id' }}</label>
+    <input class="form-control" name="dispositivo_asignados_id" type="number" id="dispositivo_asignados_id" value="{{ isset($waypoint->dispositivo_asignados_id) ? $waypoint->dispositivo_asignados_id : ''}}" >
+    {!! $errors->first('dispositivo_asignados_id', '<p class="help-block">:message</p>') !!}
 </div>
 
 

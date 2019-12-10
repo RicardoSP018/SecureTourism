@@ -4,7 +4,7 @@
     "soft_deletes":"yes",
     "pk":"id",
     "localize":"yes",
-    "table":"Categorias",
+    "table":"categorias",
     "fields": [
         {
             "name": "nombre",
@@ -27,13 +27,13 @@
         {
             "column": "paquete_id",
             "references": "id",
-            "on": "Paquetes",
+            "on": "paquetes",
             "onDelete": "cascade"
         }
         ],
     "relationships": [
         {
-            "name": "Paquetes",
+            "name": "paquetes",
             "type": "belongsTo",
             "class": "App\\Paquete"
         }

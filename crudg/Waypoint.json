@@ -4,7 +4,7 @@
     "soft_deletes":"yes",
     "pk":"id",
     "localize":"yes",
-    "table":"Waypoints",
+    "table":"waypoints",
     "fields": [
         {
             "name": "fecha",
@@ -15,24 +15,24 @@
             "type": "number"
         },
         {
-            "name": "dispositivoA_id",
+            "name": "dispositivo_asignados_id",
             "type": "integer#unsigned"
         }
     ],
     "foreign_keys": [
        
          {
-            "column": "dispositivoA_id",
+            "column": "dispositivo_asignados_id",
             "references": "id",
-            "on": "dispositivos_asignados",
+            "on": "dispositivo_asignados",
             "onDelete": "cascade"
         }
         ],
     "relationships": [
         {
-            "name": "DispositivosAsignados",
+            "name": "dispositivo_asignados",
             "type": "belongsTo",
-            "class": "App\\DispositivosAsignado"
+            "class": "App\\DispositivoAsignado"
         }
     ]
 }

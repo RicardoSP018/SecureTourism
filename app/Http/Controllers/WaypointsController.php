@@ -23,7 +23,7 @@ class WaypointsController extends Controller
         if (!empty($keyword)) {
             $waypoints = Waypoint::where('fecha', 'LIKE', "%$keyword%")
                 ->orWhere('hora', 'LIKE', "%$keyword%")
-                ->orWhere('dispositivoA_id', 'LIKE', "%$keyword%")
+                ->orWhere('dispositivo_asignados_id', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
             $waypoints = Waypoint::latest()->paginate($perPage);

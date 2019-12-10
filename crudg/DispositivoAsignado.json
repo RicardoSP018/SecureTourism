@@ -4,55 +4,53 @@
 	"soft_deletes":"yes",
 	"pk":"id",
 	"localize":"yes",
-	"table":"DispositivosAsignados",
+	"table":"dispositivoAsignados",
     "fields": [		
         {
             "name": "Inicio",
             "type": "date"
  
-        }
-        ,
+        },
         {
             "name": "Final",
             "type": "date"
-        }
-        ,
+        },
         {
             "name": "dispositivo_id",
              "type": "integer#unsigned"
         },
         {
-            "name": "paqueteAd_id",
+            "name": "paquete_adquiridos_id",
              "type": "integer#unsigned"
         }
         ],
      "foreign_keys": [
         {
-            "column": "paqueteAd_id",
+            "column": "paquete_adquiridos_id",
             "references": "id",
-            "on": "paquetes_adquiridos",
+            "on": "paquete_adquiridos",
             "onDelete": "cascade"
         },
         {
             "column": "dispositivo_id",
             "references": "id",
-            "on": "Dispositivos",
+            "on": "dispositivos",
             "onDelete": "cascade"
         }
     ],
     "relationships": [
         {
-            "name": "Dispositivos",
+            "name": "dispositivos",
             "type": "belongsTo",
             "class": "App\\Dispositivo"
         },
         {
-            "name": "PaquetesAdquiridos",
+            "name": "paquete_adquiridos",
             "type": "belongsTo",
-            "class": "App\\PaquetesAdquirido"
+            "class": "App\\PaqueteAdquirido"
         },
          {
-            "name": "Waypoints",
+            "name": "waypoints",
             "type": "hasMany",
             "class": "App\\Waypoint"
         }

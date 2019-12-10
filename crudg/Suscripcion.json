@@ -3,7 +3,7 @@
 	"soft_deletes":"yes",
 	"pk":"id",
 	"localize":"yes",
-	"table":"Suscripciones",
+	"table":"suscripcions",
     "fields": [	
         {
             "name": "nombre",
@@ -33,12 +33,12 @@
     ],
      "relationships": [
         {
-            "name": "Servicios",
+            "name": "servicios",
             "type": "hasMany",
             "class": "App\\Servicio"
         },
         {
-            "name": "Agencias",
+            "name": "agencias",
             "type": "belongsTo",
             "class": "App\\Agencia"
         }
@@ -47,7 +47,7 @@
         {
             "column": "agencia_id",
             "references": "id",
-            "on": "Agencias",
+            "on": "agencias",
             "onDelete": "cascade"
         }
         ],

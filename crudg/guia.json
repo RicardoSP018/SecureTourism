@@ -4,7 +4,7 @@
     "soft_deletes":"yes",
     "pk":"id",
     "localize":"yes",
-    "table":"Guias",
+    "table":"guias",
     "fields": [
         {
             "name": "nombre",
@@ -15,23 +15,44 @@
             "type": "string"
         },
         {
+            "name": "direccion",
+            "type": "string"
+ 
+        },
+        {
             "name": "fechaNac",
             "type": "date"
         },
         {
             "name": "redesSociales",
             "type": "string"
-        }
+        },
+        {
+            "name": "agencia_id",
+             "type": "integer#unsigned"
+        } 
         ],
     "relationships": [
         {
-            "name": "GuiasAsignados",
+            "name": "guia_asignados",
             "type": "HasMany",
             "class": "App\\GuiasAsignado"
+        },
+        {
+            "name": "agencias",
+            "type": "belongsTo",
+            "class": "App\\Agencia"
         }
     ],
     
-    "foreign_keys": []
+    "foreign_keys": [
+   {
+            "column": "agencia_id",
+            "references": "id",
+            "on": "agencias",
+            "onDelete": "cascade"
+        }
+    ]
     ,
     "validations": [
         {

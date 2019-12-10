@@ -3,7 +3,7 @@
 	"soft_deletes":"yes",
 	"pk":"id",
 	"localize":"yes",
-	"table":"Servicios",
+	"table":"servicios",
     "fields": [		
         {
             "name": "tiempo",
@@ -22,16 +22,16 @@
         {
             "column": "suscripcion_id",
             "references": "id",
-            "on": "Suscripciones",
+            "on": "suscripcions",
             "onDelete": "cascade"
         }
         ],
 
      "relationships": [
         {
-            "name": "Suscripciones",
+            "name": "suscripcions",
             "type": "belongsTo",
-            "class": "App\\Suscripcione"
+            "class": "App\\Suscripcion"
         }
     ]
 }

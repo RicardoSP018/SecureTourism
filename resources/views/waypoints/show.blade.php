@@ -27,7 +27,7 @@
                                     <tr>
                                         <th>ID</th><td>{{ $waypoint->id }}</td>
                                     </tr>
-                                    <tr><th> Fecha </th><td> {{ $waypoint->fecha }} </td></tr><tr><th> Hora </th><td> {{ $waypoint->hora }} </td></tr><tr><th> DispositivoA Id </th><td> {{ $waypoint->dispositivoA_id }} </td></tr>
+                                    <tr><th> Fecha </th><td> {{ $waypoint->fecha }} </td></tr><tr><th> Hora </th><td> {{ $waypoint->hora }} </td></tr><tr><th> Dispositivo Asignados Id </th><td> {{ $waypoint->dispositivo_asignados_id }} </td></tr>
                                 </tbody>
                             </table>
                         </div>

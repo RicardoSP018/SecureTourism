@@ -4,7 +4,7 @@
 	"soft_deletes":"yes",
 	"pk":"id",
 	"localize":"yes",
-	"table":"Dispositivos",
+	"table":"dispositivos",
     "fields": [		
         {
             "name": "nombre",
@@ -28,9 +28,9 @@
     ,
     "relationships": [
          {
-            "name": "DispositivosAsignados",
+            "name": "dispositivo_asignados",
             "type": "hasMany",
-            "class": "App\\DispositivosAsignado"
+            "class": "App\\DispositivoAsignado"
         }
     ],
 

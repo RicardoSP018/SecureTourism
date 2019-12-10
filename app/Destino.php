@@ -27,7 +27,7 @@ class Destino extends Model
      */
     protected $fillable = ['nombre', 'cupoMax', 'paquete_id'];
 
-    public function Paquete()
+    public function paquetes()
     {
         return $this->belongsTo('App\Paquete');
     }

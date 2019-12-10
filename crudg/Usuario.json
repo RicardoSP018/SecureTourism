@@ -4,7 +4,7 @@
 	"soft_deletes":"yes",
 	"pk":"id",
 	"localize":"yes",
-	"table":"Usuarios",
+	"table":"usuarios",
     "fields": [		
         {
             "name": "username",
@@ -29,12 +29,12 @@
         ],
     "relationships": [
         {
-            "name": "Administradores",
+            "name": "administradors",
             "type": "hasOne",
-            "class": "App\\Administradore"
+            "class": "App\\Administrador"
         },
         {
-            "name": "Turistas",
+            "name": "turistas",
             "type": "hasOne",
             "class": "App\\Turista"
         }

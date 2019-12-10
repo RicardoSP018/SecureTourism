@@ -27,7 +27,7 @@ class Categoria extends Model
      */
     protected $fillable = ['nombre', 'descripcion', 'imagen', 'paquete_id'];
 
-    public function Paquetes()
+    public function paquetes()
     {
         return $this->belongsTo('App\Paquete');
     }

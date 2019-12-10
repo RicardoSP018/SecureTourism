@@ -4,7 +4,7 @@
     "soft_deletes":"yes",
     "pk":"id",
     "localize":"yes",
-    "table":"PromocionesAsignadas",
+    "table":"promocionAsignadas",
     "fields": [
        {
             "name": "paquete_id",
@@ -20,27 +20,27 @@
         {
             "column": "paquete_id",
             "references": "id",
-            "on": "Paquetes",
+            "on": "paquetes",
             "onDelete": "cascade"
         },
         {
             "column": "promocion_id",
             "references": "id",
-            "on": "Promociones",
+            "on": "promocions",
             "onDelete": "cascade"
         }
     ],
 
     "relationships": [
         {
-            "name": "Paquetes",
+            "name": "paquetes",
             "type": "belongsTo",
             "class": "App\\Paquete"
         },
         {
-            "name": "Promociones",
+            "name": "promocions",
             "type": "belongsTo",
-            "class": "App\\Promocione"
+            "class": "App\\Promocion"
         }
     ]
 }

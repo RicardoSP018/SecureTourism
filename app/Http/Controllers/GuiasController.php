@@ -23,8 +23,10 @@ class GuiasController extends Controller
         if (!empty($keyword)) {
             $guias = Guia::where('nombre', 'LIKE', "%$keyword%")
                 ->orWhere('apellido', 'LIKE', "%$keyword%")
+                ->orWhere('direccion', 'LIKE', "%$keyword%")
                 ->orWhere('fechaNac', 'LIKE', "%$keyword%")
                 ->orWhere('redesSociales', 'LIKE', "%$keyword%")
+                ->orWhere('agencia_id', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
             $guias = Guia::latest()->paginate($perPage);

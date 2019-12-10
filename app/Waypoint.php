@@ -25,11 +25,11 @@ class Waypoint extends Model
      *
      * @var array
      */
-    protected $fillable = ['fecha', 'hora', 'dispositivoA_id'];
+    protected $fillable = ['fecha', 'hora', 'dispositivo_asignados_id'];
 
-    public function DispositivosAsignados()
+    public function dispositivo_asignados()
     {
-        return $this->belongsTo('App\DispositivosAsignado');
+        return $this->belongsTo('App\DispositivoAsignado');
     }
     
 }

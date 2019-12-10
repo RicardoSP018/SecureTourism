@@ -27,11 +27,11 @@ class Usuario extends Model
      */
     protected $fillable = ['username', 'correo', 'contrasena', 'tipo'];
 
-    public function Administradores()
+    public function administradors()
     {
-        return $this->hasOne('App\Administradore');
+        return $this->hasOne('App\Administrador');
     }
-    public function Turistas()
+    public function turistas()
     {
         return $this->hasOne('App\Turista');
     }

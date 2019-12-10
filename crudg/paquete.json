@@ -4,7 +4,7 @@
     "soft_deletes":"yes",
     "pk":"id",
     "localize":"yes",
-    "table":"Paquetes",
+    "table":"paquetes",
     "fields": [
         {
             "name": "nombre",
@@ -33,29 +33,29 @@
         ],
     "relationships": [
         {
-            "name": "PaquetesAdquiridos",
+            "name": "paquete_adquiridos",
             "type": "hasOne",
-            "class": "App\\PaquetesAdquirido"
+            "class": "App\\PaqueteAdquirido"
         },
         {
-            "name": "Categorias",
+            "name": "categorias",
             "type": "hasMany",
             "class": "App\\Categoria"
         },        
         {
-            "name": "PromocionesAsignadas",
+            "name": "promocion_asignadas",
             "type": "hasOne",
-            "class": "App\\Promocion"
+            "class": "App\\PromocionAsignada"
         },
         {
-            "name": "Destinos",
+            "name": "destinos",
             "type": "hasOne",
             "class": "App\\Destino"
         },
         {
-            "name": "GuiasAsignados",
+            "name": "guia_asignados",
             "type": "hasMany",
-            "class": "App\\GuiasAsignado"
+            "class": "App\\GuiaAsignado"
         }
 
     ]

@@ -27,9 +27,9 @@ class Dispositivo extends Model
      */
     protected $fillable = ['nombre', 'alcance', 'estado', 'Imagen'];
 
-    public function DispositivosAsignados()
+    public function dispositivo_asignados()
     {
-        return $this->hasMany('App\DispositivosAsignado');
+        return $this->hasMany('App\DispositivoAsignado');
     }
     
 }

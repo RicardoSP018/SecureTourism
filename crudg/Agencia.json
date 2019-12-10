@@ -4,7 +4,7 @@
 	"soft_deletes":"yes",
 	"pk":"id",
 	"localize":"yes",
-	"table":"Agencias",
+	"table":"agencias",
     "fields": [		
         {
             "name": "nombreAgencia",
@@ -49,7 +49,7 @@
          {
             "column": "administrador_id",
             "references": "id",
-            "on": "Administradores",
+            "on": "administradors",
             "onDelete": "cascade"
         }
     ],
@@ -57,14 +57,19 @@
      "relationships": [
     
          {
-            "name": "Suscripciones",
+            "name": "suscripcions",
             "type": "hasOne",
-            "class": "App\\Suscripcione"
+            "class": "App\\Suscripcion"
         },
          {
-            "name": "Administradores",
+            "name": "administradors",
             "type": "belongsTo",
-            "class": "App\\Administradore"
+            "class": "App\\Administrador"
+        },
+        {
+            "name": "guias",
+            "type": "hasMany",
+            "class": "App\\Guia"
         }
     ],
 
