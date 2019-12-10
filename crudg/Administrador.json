@@ -56,17 +56,6 @@
             "on": "usuarios",
             "onDelete": "cascade"
         }
-        ],
-
-    "validations": [
-		{
-            "field": "correo",
-            "rules": "required|min:5"
-        },
-        {
-            "field": "contrasena",
-            "rules": "required|min:8"
-        }
     ]
 	
 }

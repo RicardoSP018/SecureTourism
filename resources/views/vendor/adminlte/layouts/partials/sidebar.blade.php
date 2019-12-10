@@ -41,28 +41,30 @@
 				<span>Usuarios</span>
 				</a>
 			</li>
-			
+            <li><a href="{{url('administradors')}}">
+                <i class='fa fa-envelope'></i> 
+                <span>Administradores</span>
+                </a>
+            </li>
 			<li><a href="{{url('agencias')}}">
 				<i class='fa fa-users'></i> 
 				<span>Agencias</span>
 				</a>
 			</li>
-
-          <li><a href="{{url('suscripciones')}}">
+        <li><a href="{{url('turistas')}}">
+                <i class='fa fa-envelope'></i> 
+                <span>Turistas</span>
+                </a>
+            </li>
+          <li><a href="{{url('suscripcions')}}">
                 <i class='fa fa-money'></i> 
                 <span>Suscripciones</span>
                 </a>
             </li>
 
-            <li><a href="{{url('productos')}}">
+            <li><a href="{{url('dispositivos')}}">
                 <i class='fa fa-camera'></i> 
                 <span>Productos</span>
-                </a>
-            </li>
-
-            <li><a href="{{url('proveedores')}}">
-                <i class='fa fa-envelope'></i> 
-                <span>Proveedores</span>
                 </a>
             </li>
                 </ul>
@@ -90,7 +92,7 @@
                 </a>
             </li>
 
-            <li><a href="{{url('promociones')}}">
+            <li><a href="{{url('promocions')}}">
                 <i class='fa fa-camera'></i> 
                 <span>Promociones</span>
                 </a>
