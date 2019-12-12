@@ -10,16 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(['middleware' => 'readwrite'], function () {
-
-Route::get('/usuario/form', 'UsuariosController@form')
-	->name("usuario.formulario");
-	
-Route::post('/usuario/nuevo', 'UsuariosController@guardar')
-	->name("usuario.guardar");
-;
-	
-});
 	
 Route::get('/b', function () {
     return view('Login');
