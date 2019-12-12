@@ -17,16 +17,16 @@ public function asignar($paquete,$guia)
 	
 		$paquete=Paquete::where('id',$paquete)->first();
 		if($paquete==null)
-		throw new \ErrorException("No existe el guia");
+		throw new \ErrorException("No existe el paquete");
 	
 		$guia=Guia::where('id',$guia)->first();
 		if($guia==null)
-		throw new \ErrorException("No existe la agencia");
+		throw new \ErrorException("No existe el guia");
 	 
-		$x= new GuiaAsignado;
-		$x->paquete_id=$paquete->id;
-		$x->guia_id=$guia->id;
-		$x->save();		
-		return array('r'=>$x);
+		$p= new GuiaAsignado;
+		$p->paquete_id=$paquete->id;
+		$p->guia_id=$guia->id; 
+		$p->save();		
+		return array('r'=>$p);
     }
 }
