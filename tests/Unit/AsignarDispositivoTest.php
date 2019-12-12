@@ -26,7 +26,5 @@ class AsignarDispositivoTest extends TestCase
 		$response->assertJson(['r'=>'1']);
 
 		$this->assertTrue(true);
-        /*
-        $this->assertDatabaseHas('dispositivo_asignados',['dispositivo_id'=>'1','paquete_adquiridos_id'=>'1']);*/
     }
 }
