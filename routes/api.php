@@ -33,8 +33,6 @@ Route::post('/operaciones/suma/{a}/{b}', 'OperacionesController@sumar');
 Route::post('/operaciones/resta/{a}/{b}', 'OperacionesController@restar');
 Route::post('/operaciones/multiplica/{a}/{b}', 'OperacionesController@multiplicar');
 Route::post('/operaciones/divide/{a}/{b}', 'OperacionesController@dividir');
-
-Route::post('/V1/IAddAgency', 'App\Http\Services\AddAgencyService@Add');
-Route::get('/V1/IVerUbicacion/{$id}', 'App\Http\Services\VerUbicacionService@Show');
-
+Route::post('/V1/IAGuia/asignar/{paquete}/{guia}', 'Services\AGuiaService@asignar');
+	
 });
