@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Usuario;
+
 use App\Administrador;
 use Illuminate\Http\Request;
 
@@ -42,8 +42,7 @@ class AdministradorsController extends Controller
      */
     public function create()
     {
-        $usuarios = Usuario::All();
-        return view('administradors.create', compact('usuarios'));
+        return view('administradors.create');
     }
 
     /**

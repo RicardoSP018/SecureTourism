@@ -23,19 +23,12 @@
     <input class="form-control" name="telefono" type="text" id="telefono" value="{{ isset($administrador->telefono) ? $administrador->telefono : ''}}" >
     {!! $errors->first('telefono', '<p class="help-block">:message</p>') !!}
 </div>
-
 <div class="form-group {{ $errors->has('usuario_id') ? 'has-error' : ''}}">
-    <label for="usuario_id" class="control-label">{{ 'Usuario' }}</label>
-    <select class="form-control" name="usuario_id">
-        @foreach($usuarios as $u)
-        <option value="{{ $u->id }}" {{ isset($administradors->usuario_id) && $administradors->usuario_id==$u->id ? 'selected' : ''}}>            
-            {{$u->username}}
-        </option>
-        @endforeach
-    </select>
-    
+    <label for="usuario_id" class="control-label">{{ 'Usuario Id' }}</label>
+    <input class="form-control" name="usuario_id" type="number" id="usuario_id" value="{{ isset($administrador->usuario_id) ? $administrador->usuario_id : ''}}" >
     {!! $errors->first('usuario_id', '<p class="help-block">:message</p>') !!}
 </div>
+
 
 <div class="form-group">
     <input class="btn btn-primary" type="submit" value="{{ $formMode === 'edit' ? 'Update' : 'Create' }}">
