@@ -14,6 +14,7 @@ class DestinarPaquetesTest extends TestCase
      * @return void
      */
     public function testRegistrarTest()
+    
     {
 		$destino = 'Mexico';
 		$costo = '110';

@@ -18,8 +18,10 @@ Route::group(['prefix' => 'v1','middleware' => 'auth:api'], function () {
     //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
     #adminlte_api_routes
 });
+<<<<<<< HEAD
 Route::post('/V1/IDispositivoAsignado/Asignar/{dispositivo_id}/{paquete_adquiridos_id}/', 'Services/DispositivoAsignadoService@Asignar');	
 Route::get('/V1/IDatosDispositivo/MostrarDatos/{dispositivo_asignado}', 'Services/DatosDispositivoService@MostrarDatos');
 Route::post('V1/IAGuia/asignar/{paquete}/{guia}', 'Services\AGuiaService@asignar');
 Route::get('/periodopaquete/{fechaInicio}/{fechaFin}/{intervalo}', 'Services\PeriodoPaqueteService@periodo');
 Route::get('/test/{destino}/{costo}/{periodo}/{contenido}','Services\DestinoPaquetesService@adquirir');
+

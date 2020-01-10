@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 class DestinoPaquetesService extends Controller implements IDestinoPaquetes{
 
 	public function adquirir($destino, $costo, $periodo, $contenido)
+	
 	{
 		$paquetes = new Paquete();
 		$paquetes->destino = $destino;
